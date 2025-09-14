@@ -1,0 +1,20 @@
+18:42:35 **** Incremental Build of configuration Release for project 05-random-8-bit-leds ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "05-random-8-bit-leds.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\05-random-8-bit-leds\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="05-random-8-bit-leds.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 05-random-8-bit-leds.elf
+ 
+arm-none-eabi-size  05-random-8-bit-leds.elf 
+arm-none-eabi-objdump -h -S 05-random-8-bit-leds.elf  > "05-random-8-bit-leds.list"
+arm-none-eabi-objcopy  -O binary 05-random-8-bit-leds.elf  "05-random-8-bit-leds.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12376	    104	   2040	  14520	   38b8	05-random-8-bit-leds.elf
+Finished building: default.size.stdout
+ 
+Finished building: 05-random-8-bit-leds.bin
+Finished building: 05-random-8-bit-leds.list
+ 
+ 
+
+18:42:35 Build Finished. 0 errors, 0 warnings. (took 495ms)
+

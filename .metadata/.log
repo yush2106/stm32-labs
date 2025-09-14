@@ -37,3 +37,57 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-09-07 17:28:03.261
 !MESSAGE Indexed '02-flash-2-leds' (23 sources, 82 headers) in 0.979 sec: 5,463 declarations; 29,476 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+!SESSION 2025-09-14 07:21:06.658 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-09-14 07:21:13.002
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-09-14 07:21:13.003
+!MESSAGE Log4j2 initialized with config file D:\STM32\Lab\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-14 07:21:17.708
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 10:45:17.262
+!MESSAGE Indexed '03-flash-leds-in-sequence' (23 sources, 82 headers) in 1.73 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 11:36:25.677
+!MESSAGE Indexed '03-flash-leds-in-sequence' (23 sources, 82 headers) in 0.924 sec: 5,465 declarations; 29,536 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 13:14:07.822
+!MESSAGE Indexed '03-flash-leds-in-sequence' (23 sources, 82 headers) in 0.85 sec: 5,465 declarations; 29,536 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 13:20:40.300
+!MESSAGE Indexed '03-flash-leds-in-sequence' (23 sources, 82 headers) in 0.761 sec: 5,465 declarations; 29,535 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 14:01:51.974
+!MESSAGE Indexed '04-leds-for-8-bit' (23 sources, 82 headers) in 1.35 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 16:21:42.871
+!MESSAGE Indexed '04-leds-for-8-bit' (24 sources, 82 headers) in 1.17 sec: 5,503 declarations; 29,969 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0056%)
+!SESSION 2025-09-14 18:17:33.600 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-09-14 18:17:39.308
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-09-14 18:17:39.313
+!MESSAGE Log4j2 initialized with config file D:\STM32\Lab\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-14 18:17:45.361
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 18:30:58.455
+!MESSAGE Indexed '05-random-8-bit-leds' (23 sources, 82 headers) in 1.73 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-14 18:41:19.689
+!MESSAGE Indexed '05-random-8-bit-leds' (23 sources, 83 headers) in 0.951 sec: 5,962 declarations; 29,622 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0.011%)

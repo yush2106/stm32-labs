@@ -1,0 +1,20 @@
+18:18:57 **** Incremental Build of configuration Release for project 04-leds-for-8-bit ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "04-leds-for-8-bit.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\04-leds-for-8-bit\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="04-leds-for-8-bit.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 04-leds-for-8-bit.elf
+ 
+arm-none-eabi-size  04-leds-for-8-bit.elf 
+arm-none-eabi-objdump -h -S 04-leds-for-8-bit.elf  > "04-leds-for-8-bit.list"
+arm-none-eabi-objcopy  -O binary 04-leds-for-8-bit.elf  "04-leds-for-8-bit.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7876	     12	   1708	   9596	   257c	04-leds-for-8-bit.elf
+Finished building: default.size.stdout
+ 
+Finished building: 04-leds-for-8-bit.bin
+Finished building: 04-leds-for-8-bit.list
+ 
+ 
+
+18:18:58 Build Finished. 0 errors, 0 warnings. (took 1s.89ms)
+
