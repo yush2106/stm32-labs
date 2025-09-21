@@ -14,3 +14,7 @@ Step 3: Set the bit position like a array mask.
 Step 4: Use AND (&) to convert every bit status with the random number.
 
 Step 5: Delay.
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-circuit.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/05-random-8-bit-leds/img/05-random-8-bit-leds-01.jpg)

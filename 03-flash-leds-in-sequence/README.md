@@ -14,3 +14,9 @@ Step 3: Trun off LED.
 Step 4: Delay.
 
 Repeat these steps for 8 LEDs.
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-circuit.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-01.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-02.jpg)
