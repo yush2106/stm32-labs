@@ -91,3 +91,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-09-14 18:41:19.689
 !MESSAGE Indexed '05-random-8-bit-leds' (23 sources, 83 headers) in 0.951 sec: 5,962 declarations; 29,622 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0.011%)
+!SESSION 2025-09-21 20:51:51.749 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_TW
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-09-21 20:52:00.678
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-09-21 20:52:00.678
+!MESSAGE Log4j2 initialized with config file D:\STM32\Lab\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-09-21 20:52:07.409
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-21 20:54:28.080
+!MESSAGE Indexed '06-push-button-led' (23 sources, 82 headers) in 2.2 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-21 21:13:38.907
+!MESSAGE Indexed '06-push-button-led' (23 sources, 82 headers) in 0.972 sec: 5,463 declarations; 29,418 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
