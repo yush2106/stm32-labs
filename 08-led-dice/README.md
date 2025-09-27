@@ -2,7 +2,7 @@
 
 Use 7 LEDs for GPIO pins, PC0 to PC6.
 
-When the onboard button pressed, generate a random dice number, then turn on LED light for the dice number.
+When the onboard button is pressed, generate a random dice number, then turn on LED light for the dice number.
 
 ## Process steps
 Step 1: Turn off all leds.
