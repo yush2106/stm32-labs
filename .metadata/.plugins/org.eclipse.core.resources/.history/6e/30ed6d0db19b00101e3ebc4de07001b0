@@ -31,7 +31,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+int LED_Array[] = {
+  0x0008,  //led hex value for dice number 1
+  0x0022,  //led hex value for dice number 2
+  0x002A,  //led hex value for dice number 3
+  0x0055,  //led hex value for dice number 4
+  0x005D,  //led hex value for dice number 5
+  0x0077,  //led hex value for dice number 6
+};
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,7 +63,10 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void Reset_All_Leds() {
+	//Reset all Leds
+	GPIOC -> ODR = 0x0;    //set output data register value of zero
+}
 /* USER CODE END 0 */
 
 /**
@@ -90,8 +100,8 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  int LED_array[] = {led0, led1, led2, led3, led4, led5, led6, led7};    //LED array
-  int LED_Length = sizeof(LED_array)/sizeof(LED_array[0]);    //LED length
+  srand(time(NULL));    //random number seed
+  Reset_All_Leds();    //Reset all Leds
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,13 +109,13 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	//for(int i = 0; i < 8; i++) {
-	for(int i = 0; i < LED_Length; i++) {
-      HAL_GPIO_WritePin(GPIOC, LED_array[i], GPIO_PIN_SET);    //turn on LED
-      HAL_Delay(250);
-      HAL_GPIO_WritePin(GPIOC, LED_array[i], GPIO_PIN_RESET);    //turn off LED
-      HAL_Delay(250);
-    }
+	  //wait for button pressed
+	  while(HAL_GPIO_ReadPin(GPIOC, button) == 0) {
+		int dice_number = rand()%6;    //generate random dice number
+		GPIOC -> ODR = LED_Array[dice_number];    //write to output data register
+		HAL_Delay(5000);    //delay
+		Reset_All_Leds();    //Reset all Leds
+	}
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -220,11 +230,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PC0 PC1 PC2 PC3
                            PC4 PC5 PC6 PC7 */

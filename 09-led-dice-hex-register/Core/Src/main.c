@@ -18,7 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "stdlib.h"
+#include "time.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -109,12 +110,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  //wait for button pressed
-	  while(HAL_GPIO_ReadPin(GPIOC, button) == 0) {
-		int dice_number = rand()%6;    //generate random dice number
-		GPIOC -> ODR = LED_Array[dice_number];    //write to output data register
-		HAL_Delay(5000);    //delay
-		Reset_All_Leds();    //Reset all Leds
+	//wait for button pressed
+	while(HAL_GPIO_ReadPin(GPIOC, button) == 0) {
+      int dice_number = rand()%6;    //generate random dice number
+      GPIOC -> ODR = LED_Array[dice_number];    //write to output data register
+      HAL_Delay(5000);    //delay
+      Reset_All_Leds();    //Reset all Leds
 	}
     /* USER CODE BEGIN 3 */
   }
