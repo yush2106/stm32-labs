@@ -91,7 +91,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   int LED_array[] = {led0, led1, led2, led3, led4, led5, led6, led7};    //LED array
-  int LED_Length = sizeof(LED_array)/sizeof(LED_array[0]);    //LED length
+  int LED_array_Length = sizeof(LED_array)/sizeof(LED_array[0]);    //LED array Length
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,8 +99,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	//for(int i = 0; i < 8; i++) {
-	for(int i = 0; i < LED_Length; i++) {
+	for(int i = 0; i < LED_array_Length; i++) {
       HAL_GPIO_WritePin(GPIOC, LED_array[i], GPIO_PIN_SET);    //turn on LED
       HAL_Delay(250);
       HAL_GPIO_WritePin(GPIOC, LED_array[i], GPIO_PIN_RESET);    //turn off LED
