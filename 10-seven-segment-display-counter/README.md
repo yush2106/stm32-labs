@@ -1,26 +1,26 @@
 ## Number Counter of 7 Segment Display
 
-Connect GPIO Pin0 to Pin6, PC0 to PC6, and output singals for 7 segment display.
+The 7 segment display pins connect to GPIO Pin0 to Pin6, PC0 to PC6.
 
-Increase counter number every second and display number.
+Increase counter number every second and display number for the 7 segment display.
 
 ## Process steps
 
-Step 1: Set counter number to 0.
+Step 1: Set the counter number to 0.
 
-Step 2: Write hexadecimal number to register.
+Step 2: Write hexadecimal numbers to register.
 
-Step 3: Increase counter number.
+Step 3: Increase the counter number.
 
-Step 4: Reset counter number to 0 when it greater than 9.
+Step 4: Reset the counter number to 0 when it greater than 9.
 
 Step 5: Delay.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter-01/img/10-seven-segment-display-counter-01.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter/img/10-seven-segment-display-counter-01.jpg)
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter-02/img/10-seven-segment-display-counter-02.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter/img/10-seven-segment-display-counter-02.jpg)
 
-<table>
+<table style="text-align:center;">
   <tablehead>
     <tr>
       <td  rowspan=2>7 segment display number</td>
@@ -159,8 +159,8 @@ Step 5: Delay.
 
 No. 3 of 7 Segment Display
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter-03/img/10-seven-segment-display-counter-03.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter/img/10-seven-segment-display-counter-03.jpg)
 
 No. 8 of 7 Segment Display
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter-04/img/10-seven-segment-display-counter-04.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter/img/10-seven-segment-display-counter-04.jpg)

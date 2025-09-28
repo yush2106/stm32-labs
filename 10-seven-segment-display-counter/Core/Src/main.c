@@ -68,7 +68,7 @@ int LED_Hex[] = {
   0x7D,    // 6
   0x07,    // 7
   0x7F,    // 8
-  0x6F    // 9
+  0x6F     // 9
 };
 
 /* USER CODE END 0 */
