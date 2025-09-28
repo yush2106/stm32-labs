@@ -15,11 +15,11 @@ Step 4: Turn on leds for the random dice number.
 
 Step 5: Delay.
 
-Step 6: Turn off all leds.
+Step 6: Turn off all LEDs.
 
 Step 7: Press the onboard button, again.
 
-Turn on led for each dice number.
+Turn on LED for each dice number.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/08-led-dice/img/08-led-dice-all-numbers.jpg)
 

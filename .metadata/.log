@@ -187,3 +187,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-09-28 19:13:47.083
 !MESSAGE Indexed '11-two-digit-multiplexed-7-segment-display' (23 sources, 82 headers) in 1.11 sec: 5,463 declarations; 29,493 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-28 21:30:15.532
+!MESSAGE Indexed '12-led-for-external-interrupt' (23 sources, 82 headers) in 1.76 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-09-28 21:31:32.876
+!MESSAGE Indexed '12-led-for-external-interrupt' (23 sources, 82 headers) in 1.83 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)

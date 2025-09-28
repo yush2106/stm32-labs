@@ -21,7 +21,7 @@ Step 5: Delay.
 ![image](https://github.com/yush2106/stm32-labs/blob/main/10-seven-segment-display-counter/img/10-seven-segment-display-counter-02.jpg)
 
 <table style="text-align:center;">
-  <tablehead>
+  <thead>
     <tr>
       <td  rowspan=2>7 segment display number</td>
       <td>G</td>
@@ -42,8 +42,8 @@ Step 5: Delay.
       <td>PC1</td>
       <td>PC0</td>
     </tr>
-  </tablehead>
-  <tablebody>
+  </thead>
+  <tbody>
     <tr>
       <td>0</td>
       <td>0</td>
@@ -154,7 +154,7 @@ Step 5: Delay.
       <td>1</td>
       <td>6F</td>
     </tr>
-  </tablebody>
+  </tbody>
 </table>
 
 No. 3 of 7 Segment Display

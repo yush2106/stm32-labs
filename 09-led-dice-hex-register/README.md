@@ -21,7 +21,7 @@ Step 6: Turn off all leds.
 
 Step 7: Press the onboard button, again.
 
-Turn on led for each dice number.
+Turn on LED for each dice number.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/09-led-dice-hex-register/img/09-led-dice-hex-register-01.jpg)
 
