@@ -2,13 +2,13 @@
 
 Set the 2 buttons for external interrupts, button1 is connected to Pin6 (PA6), button2 is connected to Pin7 (PA7).
 
-Toggle 2 LEDs, LED1 (PA13) and LED2 (PA14), when interrupt signals input.
+Toggle the 2 LEDs, LED1 (PA13) and LED2 (PA14), when the interrupt signals input.
 
 ## Process steps
 
 Step 1: Set Pin PA6 and PA7 for EXTI (external interrupt) mode.
 
-Step 2: set Pin PA13 and PA14 for GPIO output mode.
+Step 2: Set Pin PA13 and PA14 for GPIO output mode.
 
 Step 3: Configure PA6 and PA7 to __External Interrupt Mode with Falling edge trigger detection__.
 
