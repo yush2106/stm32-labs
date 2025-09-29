@@ -1,4 +1,4 @@
-## Detect the interrupt signal to control LED
+## Use the external interrupt signal to control LED
 
 Define the onboard button, Pin 13 (PC13), for an interrupt signal.
 
