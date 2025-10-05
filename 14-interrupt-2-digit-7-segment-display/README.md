@@ -18,17 +18,19 @@ Step 4: Define an array for hexadecimal number of the register.
 
 Step 5: When the interrupt signal inputs, the callback function increase the counter number.
 
-Step 6: Extract the MSB number of counter, enable the digit1 of 2 digit 7 segment display.
+Step 6: Extract the MSB number and LSB number of the counter number.
 
-Step 7: Delay.
+Step 7: Enable the digit1 of 2 digit 7 segment display.
 
-Step 8: Disable the digit1.
+Step 8: Delay.
 
-Step 9: Extract the LSB number of counter, display the digit2 of 2 digit 7 segment display.
+Step 9: Disable the digit1.
 
-Step 10: Delay.
+Step 10: Enable the digit2 of 2 digit 7 segment display.
 
-Step 11: Disable the digit2.
+Step 11: Delay.
+
+Step 12: Disable the digit2.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/14-interrupt-2-digit-7-segment-display/img/14-interrupt-2-digit-7-segment-display-01.jpg)
 
