@@ -24,7 +24,11 @@ Step 7: Delay.
 
 Step 8: Disable digit for 4 digit 7 segment display.
 
+<<<<<<< HEAD
 Complete the 4 digit numbers continuously.
+=======
+Complete the 4 digit number continuously.
+>>>>>>> 89fedc0e2c25e81004a30970f45042284151ae76
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/15-four-digit-7-segment-display/img/15-four-digit-7-segment-display-01.jpg)
 
