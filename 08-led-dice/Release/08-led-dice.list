@@ -566,8 +566,8 @@ Disassembly of section .text:
  8000724:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
  8000728:	4620      	mov	r0, r4
  800072a:	f000 faf3 	bl	8000d14 <HAL_GPIO_ReadPin>
- 800072e:	2800      	cmp	r0, #0
- 8000730:	d1f8      	bne.n	8000724 <main+0xec>
+ 800072e:	2801      	cmp	r0, #1
+ 8000730:	d0f8      	beq.n	8000724 <main+0xec>
  8000732:	f001 fc8d 	bl	8002050 <rand>
  8000736:	2306      	movs	r3, #6
  8000738:	fb90 f2f3 	sdiv	r2, r0, r3
