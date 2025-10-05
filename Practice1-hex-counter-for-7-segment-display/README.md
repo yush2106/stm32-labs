@@ -142,7 +142,7 @@ Write hexadecimal data into register.
       <td>7B</td>
     </tr>
     <tr>
-      <td>E</td>
+      <td>F</td>
       <td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td>
       <td>71</td>
     </tr>
