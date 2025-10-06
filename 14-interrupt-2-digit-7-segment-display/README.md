@@ -10,7 +10,7 @@ Increase the counter number on 2 digit 7 segment display when the onboard button
 
 Step 1: Set the onboard button, pin PC13, for **External Interrupt Mode with Falling edge trigger detection**.
 
-Step 2: Set the **EXTI line[15:10] interrupts** enabled and set the **Preemption Priority** and **Sub Priority** to 0.
+Step 2: Set the **EXTI line[15:10] interrupts** enabled and set the **Preemption Priority** and **Sub Priority** to 0. It should create the **EXTI15_10_IRQHandler** in the **stm32l4xx_it.c** file, then execute the **HAL_GPIO_EXTI_Callback** function.
 
 Step 3: Define pin PC7 for digit1 and pin PC8 for digit2.
 

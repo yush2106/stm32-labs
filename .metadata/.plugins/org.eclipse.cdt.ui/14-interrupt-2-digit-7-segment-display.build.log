@@ -1,20 +1,10 @@
-17:27:26 **** Incremental Build of configuration Release for project 14-interrupt-2-digit-7-segment-display ****
+21:00:16 **** Incremental Build of configuration Release for project 14-interrupt-2-digit-7-segment-display ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "14-interrupt-2-digit-7-segment-display.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\14-interrupt-2-digit-7-segment-display\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="14-interrupt-2-digit-7-segment-display.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 14-interrupt-2-digit-7-segment-display.elf
- 
 arm-none-eabi-size  14-interrupt-2-digit-7-segment-display.elf 
-arm-none-eabi-objdump -h -S 14-interrupt-2-digit-7-segment-display.elf  > "14-interrupt-2-digit-7-segment-display.list"
-arm-none-eabi-objcopy  -O binary 14-interrupt-2-digit-7-segment-display.elf  "14-interrupt-2-digit-7-segment-display.bin"
    text	   data	    bss	    dec	    hex	filename
    4124	     52	   1580	   5756	   167c	14-interrupt-2-digit-7-segment-display.elf
 Finished building: default.size.stdout
  
-Finished building: 14-interrupt-2-digit-7-segment-display.list
-Finished building: 14-interrupt-2-digit-7-segment-display.bin
- 
- 
 
-17:27:26 Build Finished. 0 errors, 0 warnings. (took 451ms)
+21:00:16 Build Finished. 0 errors, 0 warnings. (took 249ms)
 

@@ -69,7 +69,15 @@ int LED_Hex[] = {
   0x7F,    // 8
   0x6F     // 9
 };
-
+//Digit Array
+int DigitArray[] = {digit1, digit2, digit3, digit4};
+//Reset all digits
+void ResetAllDigits() {
+  int DigitLength = sizeof(DigitArray) / sizeof(DigitArray[0]);    //digit length
+  for(int i = 0; i < DigitLength; i++) {
+    HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -102,6 +110,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+  ResetAllDigits();    //Reset all digits
   //Digit Position 0
   int DigitPosition0 = DisplayNumber % 10;
   //Digit Position 1
@@ -113,8 +122,6 @@ int main(void)
   //Digit Number Array
   int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
   int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
-  //Digit Array
-  int DigitArray[] = {digit1, digit2, digit3, digit4};
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,8 +130,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
     for(int i = 0; i < ArrayLength; i++) {
-      int DigitNumber = DigitNumberArray[i];    //digit number
-      GPIOC -> ODR = LED_Hex[DigitNumber];    //write to register
+      GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
       HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
       HAL_Delay(5);    //delay
       HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
