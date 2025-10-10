@@ -4,7 +4,7 @@ Connteced 2 buttons for inturrupt inputs, the 2 pins are PA0 and PA1.
 
 The 7 segment display LEDs connect to pins PC0 to PC6, and the 4 digit enabled input pins are PC7 to PC10.
 
-Increase or decrease the counter number when pressing the 2 inturrupt buttons.
+Increase or decrease the counter number when pressing the 2 inturrupted buttons.
 
 ## Process steps
 

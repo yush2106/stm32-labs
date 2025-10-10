@@ -59,10 +59,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-#define digit1 GPIO_PIN_7
-#define digit2 GPIO_PIN_8
-#define digit3 GPIO_PIN_9
-#define digit4 GPIO_PIN_10
+#define enable_digit1 GPIO_PIN_7
+#define enable_digit2 GPIO_PIN_8
+#define enable_digit3 GPIO_PIN_9
+#define enable_digit4 GPIO_PIN_10
 #define Decrease GPIO_PIN_0
 #define Increase GPIO_PIN_1
 /* USER CODE END Private defines */

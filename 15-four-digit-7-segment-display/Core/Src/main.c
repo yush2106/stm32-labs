@@ -55,7 +55,7 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 //display number
-int DisplayNumber = 1234;
+int DisplayNumber = 1020;
 //array of register hex number
 int LED_Hex[] = {
   0x3F,    // 0
@@ -70,7 +70,7 @@ int LED_Hex[] = {
   0x6F     // 9
 };
 //Digit Array
-int DigitArray[] = {digit1, digit2, digit3, digit4};
+int DigitArray[] = {enable_digit1, enable_digit2, enable_digit3, enable_digit4};
 //Reset all digits
 void ResetAllDigits() {
   int DigitLength = sizeof(DigitArray) / sizeof(DigitArray[0]);    //digit length
@@ -122,6 +122,7 @@ int main(void)
   //Digit Number Array
   int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
   int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
+  int leadingCount = 0;    //leading number greater than zero
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,10 +131,27 @@ int main(void)
   {
     /* USER CODE END WHILE */
     for(int i = 0; i < ArrayLength; i++) {
+      //ignore leading zero
+	  if(i == 0) {
+		if(DigitNumberArray[i] == 0){
+		  continue;
+		}
+		else if(DigitNumberArray[i] > 0){
+		  leadingCount++;
+		}
+	  }
+	  else if(i > 0 && i < (ArrayLength-1)) {
+		if(leadingCount == 0 && DigitNumberArray[i] == 0) {
+		  continue;
+		}
+		else if(leadingCount == 0 && DigitNumberArray[i] > 0) {
+		  leadingCount++;
+		}
+	  }
       GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
-      HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
-      HAL_Delay(5);    //delay
-      HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
+	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
+	  HAL_Delay(5);    //delay
+	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
     }
     /* USER CODE BEGIN 3 */
   }
