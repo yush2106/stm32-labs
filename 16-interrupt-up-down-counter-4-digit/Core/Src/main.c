@@ -55,7 +55,7 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 //display number
-int DisplayNumber = 999;
+int DisplayNumber = 90;
 //array of register hex number
 int LED_Hex[] = {
   0x3F,    // 0
@@ -146,24 +146,16 @@ int main(void)
 	//Digit Number Array
 	int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
 	int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
-	int leadingCount = 0;    //leading number greater than zero
+	int IsLeading = 0;    //leading number greater than zero
 
     for(int i = 0; i < ArrayLength; i++) {
       //ignore leading zero
-	  if(i == 0) {
-		if(DigitNumberArray[i] == 0){
+	  if(IsLeading == 0 && i < (ArrayLength-1)) {
+		if(DigitNumberArray[i] == 0) {
 		  continue;
 		}
-		else if(DigitNumberArray[i] > 0){
-		  leadingCount++;
-		}
-	  }
-	  else if(i > 0 && i < (ArrayLength-1)) {
-		if(leadingCount == 0 && DigitNumberArray[i] == 0) {
-		  continue;
-		}
-		else if(leadingCount == 0 && DigitNumberArray[i] > 0) {
-		  leadingCount++;
+		else if(DigitNumberArray[i] > 0) {
+			IsLeading = 1;
 		}
 	  }
 	  GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register

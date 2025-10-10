@@ -122,7 +122,7 @@ int main(void)
   //Digit Number Array
   int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
   int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
-  int IsLeading = 0;    //leading number greater than zero
+  int leadingCount = 0;    //leading number greater than zero
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -132,12 +132,20 @@ int main(void)
     /* USER CODE END WHILE */
     for(int i = 0; i < ArrayLength; i++) {
       //ignore leading zero
-	  if(IsLeading == 0 && i < (ArrayLength-1)) {
-		if(DigitNumberArray[i] == 0) {
+	  if(i == 0) {
+		if(DigitNumberArray[i] == 0){
 		  continue;
 		}
-		else if(DigitNumberArray[i] > 0) {
-			IsLeading = 1;
+		else if(DigitNumberArray[i] > 0){
+		  leadingCount++;
+		}
+	  }
+	  else if(i > 0 && i < (ArrayLength-1)) {
+		if(leadingCount == 0 && DigitNumberArray[i] == 0) {
+		  continue;
+		}
+		else if(leadingCount == 0 && DigitNumberArray[i] > 0) {
+		  leadingCount++;
 		}
 	  }
       GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register

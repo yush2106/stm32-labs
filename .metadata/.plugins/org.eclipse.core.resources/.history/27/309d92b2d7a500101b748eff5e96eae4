@@ -55,7 +55,7 @@ static void MX_GPIO_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 //display number
-int DisplayNumber = 1020;
+int DisplayNumber = 999;
 //array of register hex number
 int LED_Hex[] = {
   0x3F,    // 0
@@ -76,6 +76,23 @@ void ResetAllDigits() {
   int DigitLength = sizeof(DigitArray) / sizeof(DigitArray[0]);    //digit length
   for(int i = 0; i < DigitLength; i++) {
     HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
+  }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+  //button 1 to increase number
+  if(GPIO_Pin == Increase) {
+    DisplayNumber++;
+    if(DisplayNumber > 9999) {
+      DisplayNumber = 0;
+    }
+  }
+  //button 2 to decrease number
+  else if(GPIO_Pin == Decrease) {
+    DisplayNumber--;
+	if(DisplayNumber < 0) {
+      DisplayNumber = 0;
+    }
   }
 }
 /* USER CODE END 0 */
@@ -111,18 +128,6 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   ResetAllDigits();    //Reset all digits
-  //Digit Position 0
-  int DigitPosition0 = DisplayNumber % 10;
-  //Digit Position 1
-  int DigitPosition1 = (DisplayNumber - DigitPosition0) % 100 * 0.1;
-  //Digit Position 2
-  int DigitPosition2 = (DisplayNumber - DigitPosition1*10 - DigitPosition0) % 1000 * 0.01;
-  //Digit Position 3
-  int DigitPosition3 = (DisplayNumber - DigitPosition2*100 - DigitPosition1*10 - DigitPosition0) * 0.001;
-  //Digit Number Array
-  int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
-  int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
-  int IsLeading = 0;    //leading number greater than zero
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,6 +135,19 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    //Digit Position 0
+	int DigitPosition0 = DisplayNumber > 0 ? DisplayNumber % 10 : 0;
+	//Digit Position 1
+	int DigitPosition1 = (DisplayNumber - DigitPosition0) % 100 * 0.1;
+	//Digit Position 2
+	int DigitPosition2 = (DisplayNumber - DigitPosition1*10 - DigitPosition0) % 1000 * 0.01;
+	//Digit Position 3
+	int DigitPosition3 = (DisplayNumber - DigitPosition2*100 - DigitPosition1*10 - DigitPosition0) * 0.001;
+	//Digit Number Array
+	int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
+	int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
+	int IsLeading = 0;    //leading number greater than zero
+
     for(int i = 0; i < ArrayLength; i++) {
       //ignore leading zero
 	  if(IsLeading == 0 && i < (ArrayLength-1)) {
@@ -137,14 +155,14 @@ int main(void)
 		  continue;
 		}
 		else if(DigitNumberArray[i] > 0) {
-			IsLeading = 1;
+		  leadingCount = 1;
 		}
 	  }
-      GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
+	  GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
 	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
 	  HAL_Delay(5);    //delay
 	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
-    }
+	}
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -213,6 +231,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
@@ -229,6 +248,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PA0 PA1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
