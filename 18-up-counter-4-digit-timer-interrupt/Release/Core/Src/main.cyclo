@@ -1,0 +1,6 @@
+../Core/Src/main.c:92:6:IncreaseCounter	2
+../Core/Src/main.c:115:6:ProcessDisplayNumber	6
+../Core/Src/main.c:137:6:HAL_TIM_PeriodElapsedCallback	4
+../Core/Src/main.c:204:6:SystemClock_Config	4
+../Core/Src/main.c:157:5:main	7
+../Core/Src/main.c:383:6:Error_Handler	1

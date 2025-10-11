@@ -50,9 +50,11 @@ TIM2 global interrupt: Enabled
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/17-timer-interrupt-flash-led/img/17-timer-interrupt-flash-led-03.jpg)
 
-Step 3: Enable TIM2 global interrupt in NVIC settings.
-
 ![image](https://github.com/yush2106/stm32-labs/blob/main/17-timer-interrupt-flash-led/img/17-timer-interrupt-flash-led-04.jpg)
+
+Step 3: Enable TIM2 global interrupt in the NVIC settings.
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/17-timer-interrupt-flash-led/img/17-timer-interrupt-flash-led-05.jpg)
 
 Step 4: Define the timer interrupt callback function to toggle onblard LED.
 
