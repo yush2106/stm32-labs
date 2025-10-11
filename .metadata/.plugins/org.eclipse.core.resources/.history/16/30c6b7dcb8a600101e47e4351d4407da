@@ -122,8 +122,13 @@ void ProcessDisplayNumber() {
 	  IsLeading = 1;
 	}
   }
-  //previous digit position
-  int PreviousPosition = (DigitPosition == 0) ? (ArrayLength-1) : (DigitPosition-1);
+  int PreviousPosition;    //previous digit position
+  if(DigitPosition == 0) {
+    PreviousPosition = ArrayLength-1;
+  }
+  else {
+	PreviousPosition = DigitPosition-1;
+  }
   HAL_GPIO_WritePin(GPIOC, DigitArray[PreviousPosition], GPIO_PIN_RESET);    //disabled
   GPIOC -> ODR = LED_Hex[DigitNumberArray[DigitPosition]];    //write to register
   HAL_GPIO_WritePin(GPIOC, DigitArray[DigitPosition], GPIO_PIN_SET);    //enabled

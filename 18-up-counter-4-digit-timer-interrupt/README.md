@@ -84,4 +84,8 @@ Step 5: When the timer 3 interrupt signal inputs, display each digit number.
 
 Step 6: Start timer 2 and timer 3 process in the main.c file.
 
+![image](https://github.com/yush2106/stm32-labs/blob/main/15-four-digit-7-segment-display/img/15-four-digit-7-segment-display-01.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/15-four-digit-7-segment-display/img/15-four-digit-7-segment-display-02.jpg)
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/15-four-digit-7-segment-display/img/15-four-digit-7-segment-display-03.jpg)
