@@ -76,12 +76,12 @@ TIM3 global interrupt: Enabled
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/18-up-counter-4-digit-timer-interrupt/img/18-up-counter-4-digit-timer-interrupt-03.jpg)
 
-Step 3: Define the callback function.
+Step 3: Define the callback function for increasing display number and enabling 4 digit number of 7 segment display.
 
 Step 4: Increase display number when the timer 2 interrupt signal inputs. If the display number greater than the maximum number, reset the display number to 0.
 
-Step 4: If the timer 3 interrupt signal input, display 4 digit numbers.
+Step 5: When the timer 3 interrupt signal inputs, display each digit number.
 
-Step 5: Start timer 2 and timer 3 process in the main.c file.
+Step 6: Start timer 2 and timer 3 process in the main.c file.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/15-four-digit-7-segment-display/img/15-four-digit-7-segment-display-03.jpg)
