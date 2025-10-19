@@ -1,15 +1,15 @@
 ## LCD Display Text
 
-NUCLEO-L476RG conntects pin4 to pin9 (PA4 to PA9) with the 1602A LCD display.
+NUCLEO-L476RG conntects pin4 to pin9 (PC4 to PC9) with the 1602A LCD.
 Try to setup and display text on the LCD.
 
 ## Process step
 
-Step 1: Set PA4 to PA9 for GPIO output.
+Step 1: Set PC4 to PC9 for GPIO output.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/19-display-lcd-text/img/19-display-lcd-text-01.jpg)
 
-Step 2: Connect pins, PA4 to PA7, with 1602A LCD display pins, DB4 to DB7. The power 3.3V and GND connect to VCC and GND of LCD display.
+Step 2: Connect pins, PC4 to PC7, with 1602A LCD pins, DB4 to DB7. The power 3.3V and GND connect to VCC and GND of LCD.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/19-display-lcd-text/img/19-display-lcd-text-02.jpg)
 
@@ -123,12 +123,12 @@ Step 3: LCD initialization.
       <td>0</td>
     </tr>
     <tr>
-      <td>6</td>
+      <td>8</td>
       <td colspan=10>Delay</td>
       <td></td>
     </tr>
     <tr>
-      <td rowspan=2>7</td>
+      <td rowspan=2>9</td>
       <td>RS</td>
       <td>RW</td>
       <td>DB7</td>
@@ -154,12 +154,12 @@ Step 3: LCD initialization.
       <td>0</td>
     </tr>
     <tr>
-      <td>8</td>
+      <td>10</td>
       <td colspan=10>Delay</td>
       <td></td>
     </tr>
     <tr>
-      <td rowspan=2>9</td>
+      <td rowspan=2>11</td>
       <td>RS</td>
       <td>RW</td>
       <td>DB7</td>
@@ -189,12 +189,12 @@ Step 3: LCD initialization.
       <td>0</td>
     </tr>
     <tr>
-      <td>10</td>
+      <td>12</td>
       <td colspan=10>Delay</td>
       <td></td>
     </tr>
     <tr>
-      <td rowspan=2>11</td>
+      <td rowspan=2>13</td>
       <td>RS</td>
       <td>RW</td>
       <td>DB7</td>
@@ -224,12 +224,12 @@ Step 3: LCD initialization.
       <td>1</td>
     </tr>
     <tr>
-      <td>12</td>
+      <td>14</td>
       <td colspan=10>Delay</td>
       <td></td>
     </tr>
     <tr>
-      <td rowspan=2>13</td>
+      <td rowspan=2>15</td>
       <td>RS</td>
       <td>RW</td>
       <td>DB7</td>
@@ -257,12 +257,12 @@ Step 3: LCD initialization.
       <td>1</td>
     </tr>
     <tr>
-      <td>14</td>
+      <td>16</td>
       <td colspan=10>Delay</td>
       <td></td>
     </tr>
     <tr>
-      <td rowspan=2>15</td>
+      <td rowspan=2>17</td>
       <td>RS</td>
       <td>RW</td>
       <td>DB7</td>
@@ -274,8 +274,8 @@ Step 3: LCD initialization.
       <td>DB1</td>
       <td>DB0</td>
       <td rowspan=2>0x0006<br/>
-      DB1 (I/D): 1 for auto increase cursor position
-      DB0 (SH): 0 for disable shift entire lcd
+      DB1 (I/D): 1 for increase cursor position automatically<br/>
+      DB0 (SH): 0 for disable shift entire LCD
       </td>
     </tr>
     <tr>
@@ -291,7 +291,7 @@ Step 3: LCD initialization.
       <td>0</td>
     </tr>
     <tr>
-      <td>16</td>
+      <td>18</td>
       <td colspan=10>Delay</td>
       <td></td>
     </tr>
