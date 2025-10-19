@@ -33,4 +33,6 @@ Step 4: Set the project **Properties**. To enable the
 
 Step 5: Start ADC1, then poll and conversion. Convert ADC value to 12-bit resolution value and display on the LCD.
 
+It's the real-time volt value on the LCD while knobing the potentiometer.
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/21-adc-analog-voltmeter/img/21-adc-analog-voltmeter-05.jpg)
