@@ -9,7 +9,7 @@ Step 1: Set PC4 to PC9 for GPIO output.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/19-display-lcd-text/img/19-display-lcd-text-01.jpg)
 
-Step 2: Connect pins, PC4 to PC7, with 1602A LCD pins, DB4 to DB7. The power 3.3V and GND connect to VCC and GND of LCD.
+Step 2: Connect pins, PC4 to PC7, with 1602A LCD pins, D4 to D7. The power 3.3V and GND connect to VCC and GND of LCD.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/19-display-lcd-text/img/19-display-lcd-text-02.jpg)
 
@@ -38,14 +38,14 @@ Step 3: LCD initialization.
       <td rowspan=2>3</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2></td>
     </tr>
     <tr>
@@ -69,14 +69,14 @@ Step 3: LCD initialization.
       <td rowspan=2>5</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2></td>
     </tr>
     <tr>
@@ -100,14 +100,14 @@ Step 3: LCD initialization.
       <td rowspan=2>7</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2></td>
     </tr>
     <tr>
@@ -131,14 +131,14 @@ Step 3: LCD initialization.
       <td rowspan=2>9</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2></td>
     </tr>
     <tr>
@@ -162,18 +162,18 @@ Step 3: LCD initialization.
       <td rowspan=2>11</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2>0x0028<br/>
-      DB4 (DL): 0 for 4-bit<br/>
-      DB3 (N): 1 for 2-Line<br/>
-      DB2 (F): 0 for 5 * 8 font
+      D4 (DL): 0 for 4-bit<br/>
+      D3 (N): 1 for 2-Line<br/>
+      D2 (F): 0 for 5 * 8 font
       </td>
     </tr>
     <tr>
@@ -197,18 +197,18 @@ Step 3: LCD initialization.
       <td rowspan=2>13</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2>0x000F<br/>
-      DB2 (D): 1 for display on<br/>
-      DB1 (C): 1 for show cursor<br/>
-      DB0 (B): 1 for blinking cursor
+      D2 (D): 1 for display on<br/>
+      D1 (C): 1 for show cursor<br/>
+      D0 (B): 1 for blinking cursor
       </td>
     </tr>
     <tr>
@@ -232,16 +232,16 @@ Step 3: LCD initialization.
       <td rowspan=2>15</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2>0x0001<br/>
-      DB0 : 1 for clear display
+      D0 : 1 for clear display
       </td>
     </tr>
     <tr>
@@ -265,17 +265,17 @@ Step 3: LCD initialization.
       <td rowspan=2>17</td>
       <td>RS</td>
       <td>RW</td>
-      <td>DB7</td>
-      <td>DB6</td>
-      <td>DB5</td>
-      <td>DB4</td>
-      <td>DB3</td>
-      <td>DB2</td>
-      <td>DB1</td>
-      <td>DB0</td>
+      <td>D7</td>
+      <td>D6</td>
+      <td>D5</td>
+      <td>D4</td>
+      <td>D3</td>
+      <td>D2</td>
+      <td>D1</td>
+      <td>D0</td>
       <td rowspan=2>0x0006<br/>
-      DB1 (I/D): 1 for increase cursor position automatically<br/>
-      DB0 (SH): 0 for disable shift entire LCD
+      D1 (I/D): 1 for increase cursor position automatically<br/>
+      D0 (SH): 0 for disable shift entire LCD
       </td>
     </tr>
     <tr>

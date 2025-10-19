@@ -90,7 +90,7 @@ int main(void)
   LCD_initial();    //initialize lcd
   LCD_Puts("Hello, STM32,");    //write sting
   LCD_GoTo_Position(1, 0);    //move to row 1, column 0
-  LCD_Puts("LCD Display.");    //write sting
+  LCD_Puts("LCD Project.");    //write sting
   /* USER CODE END 2 */
 
   /* Infinite loop */

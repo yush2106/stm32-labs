@@ -62,7 +62,8 @@ char Text[17];
 
 void AddCounter() {
 	LCD_GoTo_Position(1, 0);    //go to lcd position
-	itoa(CounterNumber, Text, 10);
+	itoa(CounterNumber, Text, 10);    //convert to string type
+	//LCD_Puts(Text);
 	LCD_PutCh(*Text);    //display text on LCD
 	CounterNumber++;    //increase count number
 	CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter

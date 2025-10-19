@@ -1,6 +1,6 @@
 ## Up Counter on LCD
 
-Conntects pin4 to pin9 (PC4 to PC9) with the 1602A LCD. Then, increase counter number and display it in every second.
+NUCLEO L476RG conntects pin4 to pin9 (PC4 to PC9) with the 1602A LCD. Then, it increase counter number and display it in every second.
 
 ## Process step
 
@@ -8,7 +8,7 @@ Step 1: Set PC4 to PC9 for GPIO output.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/19-display-lcd-text/img/19-display-lcd-text-01.jpg)
 
-Step 2: Connect pins, PC4 to PC7, with 1602A LCD pins, DB4 to DB7. The power 3.3V and GND connect to VCC and GND of LCD.
+Step 2: Connect pins, PC4 to PC7, with 1602A LCD pins, D4 to D7. The power 3.3V and GND connect to VCC and GND of LCD.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/19-display-lcd-text/img/19-display-lcd-text-02.jpg)
 

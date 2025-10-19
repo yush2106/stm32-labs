@@ -1,0 +1,10 @@
+16:30:56 **** Incremental Build of configuration Release for project 21-adc-analog-voltmeter ****
+make -j20 all 
+arm-none-eabi-size  21-adc-analog-voltmeter.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23540	    468	   2012	  26020	   65a4	21-adc-analog-voltmeter.elf
+Finished building: default.size.stdout
+ 
+
+16:30:56 Build Finished. 0 errors, 0 warnings. (took 191ms)
+
