@@ -1,0 +1,8 @@
+../Core/Src/lcd.c:5:6:LCD_Strobe	1
+../Core/Src/lcd.c:13:6:LCD_Write_Cmd	1
+../Core/Src/lcd.c:30:6:LCD_Write_Data	1
+../Core/Src/lcd.c:47:6:LCD_Clear	1
+../Core/Src/lcd.c:53:6:LCD_Puts	2
+../Core/Src/lcd.c:60:6:LCD_PutCh	1
+../Core/Src/lcd.c:77:6:LCD_GoTo_Position	1
+../Core/Src/lcd.c:91:6:LCD_initial	1
