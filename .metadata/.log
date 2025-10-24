@@ -764,3 +764,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-10-24 17:50:41.022
 !MESSAGE Indexed '22-multiple-inputs-adc' (24 sources, 84 headers) in 1.64 sec: 5,814 declarations; 34,277 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.005%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-24 19:32:44.773
+!MESSAGE Indexed '23-interrupt-input-adc' (21 sources, 80 headers) in 2.61 sec: 4,847 declarations; 22,946 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0072%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-24 19:48:21.557
+!MESSAGE Indexed '23-interrupt-input-adc' (24 sources, 84 headers) in 1.47 sec: 5,816 declarations; 34,259 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.005%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-24 20:21:48.709
+!MESSAGE Indexed '22-multiple-inputs-adc' (23 sources, 82 headers) in 1.25 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-24 20:30:06.143
+!MESSAGE Indexed '22-multiple-inputs-adc' (23 sources, 83 headers) in 1.14 sec: 5,779 declarations; 34,063 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.005%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-24 22:06:36.888
+!MESSAGE Indexed '22-multiple-inputs-adc' (23 sources, 82 headers) in 1.54 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-10-24 22:09:56.189
+!MESSAGE Indexed '22-multiple-inputs-adc' (23 sources, 83 headers) in 1.01 sec: 5,779 declarations; 34,076 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.005%)
