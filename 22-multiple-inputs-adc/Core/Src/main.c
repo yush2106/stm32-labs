@@ -19,7 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "lcd.h"
-#include "stdlib.h"
+#include "stdio.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -57,8 +57,7 @@ static void MX_ADC1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint32_t ADCResult1=0, ADCResult2=0;    //ADC result values
-ADC_HandleTypeDef hadc1;    //ADC1
+
 /* USER CODE END 0 */
 
 /**
@@ -92,6 +91,7 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
+  uint32_t ADCResult1=0, ADCResult2=0;    //ADC result values
   float millivolts;    //millivolts
   char buff[10];    //string buffer
   LCD_initial();
@@ -102,27 +102,27 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-      HAL_ADC_Start(&hadc1);    //start ADC
-	  HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
-	  ADCResult1 = HAL_ADC_GetValue(&hadc1);    //channel 1
+    HAL_ADC_Start(&hadc1);    //start ADC
+	HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
+	ADCResult1 = HAL_ADC_GetValue(&hadc1);    //channel 1
 
-	  HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
-	  ADCResult2 = HAL_ADC_GetValue(&hadc1);    //channel
-	  HAL_ADC_Stop(&hadc1);    //stop ADC
+	HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
+	ADCResult2 = HAL_ADC_GetValue(&hadc1);    //channel 2
+	HAL_ADC_Stop(&hadc1);    //stop ADC
 
-	  LCD_Clear();
+	LCD_Clear();    //clear LCD
 
-	  millivolts = ((float)ADCResult1) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
-	  LCD_GoTo_Position(0, 0);    //go to lcd position
-	  sprintf(buff, "%7.2f", millivolts);
-	  LCD_Puts(buff);    //display values on LCD
+	millivolts = ((float)ADCResult1) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
+	sprintf(buff, "%7.2f", millivolts);
+	LCD_GoTo_Position(0, 0);    //go to lcd position
+	LCD_Puts(buff);    //display values on LCD
 
-	  millivolts = ((float)ADCResult2) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
-	  LCD_GoTo_Position(1, 0);    //go to lcd position
-	  sprintf(buff, "%7.2f", millivolts);
-	  LCD_Puts(buff);    //display values on LCD
+	millivolts = ((float)ADCResult2) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
+	sprintf(buff, "%7.2f", millivolts);
+	LCD_GoTo_Position(1, 0);    //go to lcd position
+	LCD_Puts(buff);    //display values on LCD
 
-	  HAL_Delay(500);    //delay
+	HAL_Delay(500);    //delay
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -152,8 +152,8 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 10;
+  RCC_OscInitStruct.PLL.PLLM = 2;
+  RCC_OscInitStruct.PLL.PLLN = 20;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
@@ -203,7 +203,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
-  hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc1.Init.LowPowerAutoWait = DISABLE;
   hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.NbrOfConversion = 2;

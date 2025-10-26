@@ -1,18 +1,6 @@
-22:38:16 **** Incremental Build of configuration Release for project 22-multiple-inputs-adc ****
+16:28:20 **** Incremental Build of configuration Release for project 22-multiple-inputs-adc ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:117:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  117 |           sprintf(buff, "%7.2f", millivolts);
-      |           ^~~~~~~
-../Core/Src/main.c:23:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   22 | #include "stdlib.h"
-  +++ |+#include <stdio.h>
-   23 | /* Private includes ----------------------------------------------------------*/
-../Core/Src/main.c:117:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  117 |           sprintf(buff, "%7.2f", millivolts);
-      |           ^~~~~~~
-../Core/Src/main.c:117:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "22-multiple-inputs-adc.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\22-multiple-inputs-adc\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="22-multiple-inputs-adc.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 22-multiple-inputs-adc.elf
  
@@ -20,7 +8,7 @@ arm-none-eabi-size  22-multiple-inputs-adc.elf
 arm-none-eabi-objdump -h -S 22-multiple-inputs-adc.elf  > "22-multiple-inputs-adc.list"
 arm-none-eabi-objcopy  -O binary 22-multiple-inputs-adc.elf  "22-multiple-inputs-adc.bin"
    text	   data	    bss	    dec	    hex	filename
-  31084	    468	   2012	  33564	   831c	22-multiple-inputs-adc.elf
+  24004	    468	   2004	  26476	   676c	22-multiple-inputs-adc.elf
 Finished building: default.size.stdout
  
 Finished building: 22-multiple-inputs-adc.bin
@@ -28,5 +16,5 @@ Finished building: 22-multiple-inputs-adc.bin
 Finished building: 22-multiple-inputs-adc.list
  
 
-22:38:16 Build Finished. 0 errors, 2 warnings. (took 601ms)
+16:28:21 Build Finished. 0 errors, 0 warnings. (took 603ms)
 

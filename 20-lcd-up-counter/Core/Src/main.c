@@ -57,24 +57,16 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int CounterNumber = 0;    //count number
+uint8_t CounterNumber = 0;    //count number
 char Text[17];
-
-void AddCounter() {
-	LCD_GoTo_Position(1, 0);    //go to lcd position
-	itoa(CounterNumber, Text, 10);    //convert to string type
-	//LCD_Puts(Text);
-	LCD_PutCh(*Text);    //display text on LCD
-	CounterNumber++;    //increase count number
-	CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter
-}
+uint8_t DataFlag = 0;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);    //change LED status
-
-	//AddCounter();    //add counter
-
-	//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);    //change LED status
+//	DataFlag = 1;
+//	itoa(CounterNumber, Text, 10);    //convert to string type
+//  CounterNumber++;    //increase count number
+//  CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter
+//	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);    //change LED status
 }
 /* USER CODE END 0 */
 
@@ -123,9 +115,24 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+	/*
+	while(DataFlag == 0){
+	  //wait flag, do nothing
+	}
+	if(DataFlag == 1) {
+      DataFlag = 0;
+	  LCD_GoTo_Position(1, 0);    //go to lcd position
+	  LCD_PutCh(*Text);    //display text on LCD)
+	  HAL_Delay(1000);    //delay
+	}
+    */
 
-    AddCounter();    //add counter
-	HAL_Delay(1000);    //delay
+    itoa(CounterNumber, Text, 10);    //convert to string type
+    LCD_GoTo_Position(1, 0);    //go to lcd position
+    LCD_PutCh(*Text);    //display text on LCD)
+    CounterNumber++;    //increase count number
+    CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter
+    HAL_Delay(1000);    //delay
 
   }
   /* USER CODE END 3 */

@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="DAC_CHANNEL_1"/>
+		<item value="ADCResult"/>
 		<item value="GPIOA"/>
 		<item value="HAL_TIM_PeriodElapsedCallback"/>
 		<item value="start"/>

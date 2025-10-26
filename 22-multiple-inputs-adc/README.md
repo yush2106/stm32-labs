@@ -18,7 +18,7 @@ Scan Conversion Mode: **Enabled**
 
 Continuous Conversion Mode: **Enabled**
 
-End Of Conversion Selection: **End of sequence of conversion**
+End Of Conversion Selection: **End of single conversion**
 
 Overrun behaviour: **Overrun data overwritten**
 
