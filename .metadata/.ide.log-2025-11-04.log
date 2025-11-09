@@ -1,0 +1,290 @@
+2025-11-05 00:35:30,437 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-05 00:35:55,932 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 877676592 Bytes (993001472)
+2025-11-05 00:35:57,630 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 902842416 Bytes (993001472)
+2025-11-05 00:35:58,839 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 354599704 Bytes (993001472)
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DAC
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8L4
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-11-05 00:35:59,223 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-11-05 00:35:59,223 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-11-05 00:35:59,224 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-11-05 00:35:59,224 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Initvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Statevalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Statevalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-11-05 00:35:59,225 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Initvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Statevalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Statevalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-11-05 00:35:59,226 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : pSyncConfigvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : SyncSignalIDvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : SyncSignalIDvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : SyncPolarityvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : SyncPolarityvalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : SyncEnablevalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : SyncEnablevalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : EventEnablevalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : EventEnablevalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:325 - Argument : RequestNumbervalue: null
+2025-11-05 00:35:59,227 [INFO] Argument:335 - Argument : RequestNumbervalue: null
+2025-11-05 00:35:59,308 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\license.tmp_save
+2025-11-05 00:35:59,580 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\license.tmp
+2025-11-05 00:35:59,670 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\gpio.tmp_save
+2025-11-05 00:35:59,799 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\gpio.tmp
+2025-11-05 00:36:00,090 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma.tmp_save
+2025-11-05 00:36:00,179 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma.tmp
+2025-11-05 00:36:00,183 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma_GV.tmp_save
+2025-11-05 00:36:00,261 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma_GV.tmp
+2025-11-05 00:36:00,272 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_it.c_save
+2025-11-05 00:36:00,503 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_it.c
+2025-11-05 00:36:00,503 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_it.h_save
+2025-11-05 00:36:00,570 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_it.h
+2025-11-05 00:36:00,587 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_hal_msp.c_save
+2025-11-05 00:36:00,704 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_hal_msp.c
+2025-11-05 00:36:00,704 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\system.tmp_save
+2025-11-05 00:36:00,753 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\system.tmp
+2025-11-05 00:36:00,770 [INFO] CodeEngine:321 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_hal_conf.h_save
+2025-11-05 00:36:00,820 [INFO] CodeEngine:345 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_hal_conf.h
+2025-11-05 00:36:00,837 [INFO] ApiDbMcu:532 - Load IP Config File for DAC1
+2025-11-05 00:36:00,854 [INFO] ApiDbMcu:532 - Load IP Config File for TIM2
+2025-11-05 00:36:00,854 [INFO] ApiDbMcu:532 - Load IP Config File for RCC
+2025-11-05 00:36:00,854 [WARN] IPConfigManager:3811 - IP not found : TIM
+2025-11-05 00:36:00,854 [WARN] CodeGenerator:4259 - IP not found : null
+2025-11-05 00:36:00,870 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\main.h_save
+2025-11-05 00:36:00,954 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\main.h
+2025-11-05 00:36:00,954 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\main.c_save
+2025-11-05 00:36:01,075 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\main.c
+2025-11-05 00:36:01,371 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 150mS.
+2025-11-05 00:36:01,371 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-11-05 00:36:01,449 [INFO] ConfigFileManager:1595 - The Die is : DIE415
+2025-11-05 00:36:01,451 [INFO] ApiDbMcu:532 - Load IP Config File for FATFS
+2025-11-05 00:36:01,456 [INFO] ApiDbMcu:532 - Load IP Config File for FREERTOS
+2025-11-05 00:36:01,465 [INFO] ApiDbMcu:532 - Load IP Config File for TOUCHSENSING
+2025-11-05 00:36:01,468 [INFO] ApiDbMcu:532 - Load IP Config File for USB_DEVICE
+2025-11-05 00:36:01,471 [INFO] ApiDbMcu:532 - Load IP Config File for USB_HOST
+2025-11-05 00:36:02,094 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 723mS.
+2025-11-05 00:36:02,095 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 1mS.
+2025-11-05 00:36:02,097 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-11-05 00:49:55,328 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 826480944 Bytes (993001472)
+2025-11-05 00:49:57,520 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 859420672 Bytes (993001472)
+2025-11-05 00:49:59,748 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 374533352 Bytes (993001472)
+2025-11-05 00:50:00,076 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DAC
+2025-11-05 00:50:00,076 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8L4
+2025-11-05 00:50:00,076 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-11-05 00:50:00,076 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-11-05 00:50:00,077 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-11-05 00:50:00,077 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-11-05 00:50:00,077 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-11-05 00:50:00,077 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-11-05 00:50:00,079 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:50:00,079 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : Initvalue: null
+2025-11-05 00:50:00,079 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:50:00,079 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:50:00,079 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:50:00,079 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:50:00,079 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:50:00,079 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : Statevalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : Statevalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:50:00,080 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-11-05 00:50:00,081 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:50:00,081 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel3
+2025-11-05 00:50:00,081 [INFO] Argument:325 - Argument : Initvalue: null
+2025-11-05 00:50:00,082 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_6
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:50:00,082 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-11-05 00:50:00,082 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : Statevalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : Statevalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-11-05 00:50:00,083 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:325 - Argument : pSyncConfigvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:327 - 	 sub Args: 
+2025-11-05 00:50:00,084 [INFO] Argument:325 - Argument : SyncSignalIDvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:335 - Argument : SyncSignalIDvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:325 - Argument : SyncPolarityvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:335 - Argument : SyncPolarityvalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:325 - Argument : SyncEnablevalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:335 - Argument : SyncEnablevalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:325 - Argument : EventEnablevalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:335 - Argument : EventEnablevalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:325 - Argument : RequestNumbervalue: null
+2025-11-05 00:50:00,084 [INFO] Argument:335 - Argument : RequestNumbervalue: null
+2025-11-05 00:50:00,161 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\license.tmp_save
+2025-11-05 00:50:00,419 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\license.tmp
+2025-11-05 00:50:00,482 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\gpio.tmp_save
+2025-11-05 00:50:00,608 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\gpio.tmp
+2025-11-05 00:50:00,901 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma.tmp_save
+2025-11-05 00:50:00,990 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma.tmp
+2025-11-05 00:50:00,995 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma_GV.tmp_save
+2025-11-05 00:50:01,074 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\dma_GV.tmp
+2025-11-05 00:50:01,084 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_it.c_save
+2025-11-05 00:50:01,278 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_it.c
+2025-11-05 00:50:01,283 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_it.h_save
+2025-11-05 00:50:01,365 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_it.h
+2025-11-05 00:50:01,376 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_hal_msp.c_save
+2025-11-05 00:50:01,491 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\stm32l4xx_hal_msp.c
+2025-11-05 00:50:01,494 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\system.tmp_save
+2025-11-05 00:50:01,555 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\MXTmpFiles\system.tmp
+2025-11-05 00:50:01,565 [INFO] CodeEngine:321 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_hal_conf.h_save
+2025-11-05 00:50:01,639 [INFO] CodeEngine:345 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\stm32l4xx_hal_conf.h
+2025-11-05 00:50:01,658 [WARN] IPConfigManager:3811 - IP not found : TIM
+2025-11-05 00:50:01,659 [WARN] CodeGenerator:4259 - IP not found : null
+2025-11-05 00:50:01,666 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\main.h_save
+2025-11-05 00:50:01,754 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Inc\main.h
+2025-11-05 00:50:01,759 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\main.c_save
+2025-11-05 00:50:01,861 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\Practice2-arbitrary-waveform-generator\Core\Src\main.c
+2025-11-05 00:50:02,240 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 145mS.
+2025-11-05 00:50:02,243 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-11-05 00:50:02,310 [INFO] ConfigFileManager:1595 - The Die is : DIE415
+2025-11-05 00:50:03,052 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 809mS.
+2025-11-05 00:50:03,053 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 1mS.
+2025-11-05 00:50:03,055 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 1mS.
+2025-11-05 01:13:53,199 [INFO] Gpio:278 - dependency for GPIO [DAC1]
+2025-11-05 01:14:18,004 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,27,793x424,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-05 01:18:26,651 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,658x254,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-05 01:18:58,663 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,658x333,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-11-05 01:20:16,311 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA
+2025-11-05 01:20:29,700 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA
+2025-11-05 01:25:21,715 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA

@@ -113,8 +113,8 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	if(DataFlag == 1) {
-      DataFlag = 0;    //data flag
-      LCD_GoTo_Position(1, 0);    //move to LCD position
+	  DataFlag = 0;    //data flag
+	  LCD_GoTo_Position(1, 0);    //move to LCD position
 	  LCD_Puts(buff);    //display values on LCD
 	  HAL_Delay(500);    //delay
 	  HAL_ADC_Start_IT(&hadc1);    //restart ADC

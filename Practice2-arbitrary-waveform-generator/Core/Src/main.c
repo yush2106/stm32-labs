@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "math.h"    //math library
+#include "lcd.h"    //LCD library
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,6 +42,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 DAC_HandleTypeDef hdac1;
+DMA_HandleTypeDef hdma_dac_ch1;
 
 TIM_HandleTypeDef htim2;
 
@@ -51,6 +53,7 @@ TIM_HandleTypeDef htim2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_DAC1_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
@@ -59,14 +62,170 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float DAC_Range = 4095.0;
-float j = 0.0;
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	uint32_t DACData = ((uint32_t)(j * DAC_Range));
-	HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, DACData);
-	j = j + 0.1;
-	if(j >= 1.0) {
-		j = 0.0;
+float DAC_Range = 4095.0;    //12-bit range
+#define DataCount 100    //sample data
+uint8_t wave_type = 0;
+uint8_t value_index = 0;
+uint8_t lcd_flag = 0;
+
+uint16_t sawtooth_wave[DataCount];    //sawtooth wave data
+uint16_t square_wave[DataCount];    //square wave data
+uint16_t sine_wave[DataCount];    //sine wave data
+uint16_t trapezoidal_wave[DataCount];    //trapezoidal wave data
+uint16_t triangular_wave[DataCount];    //triangular wave data
+
+//LED Array
+uint8_t LED_Array[] = {led0,led1,led2,led3,led4};
+
+//sawtooth wave
+void set_sawtooth_wave() {
+  //get each step value
+  for(int i = 0; i < DataCount; i++){
+	sawtooth_wave[i] = (uint32_t)((float)i / (float)DataCount * DAC_Range);
+  }
+}
+
+//square wave
+void set_square_wave() {
+  //get each step value
+  for(int i = 0; i < DataCount; i++){
+	if(i < DataCount * 0.5) {
+	  square_wave[i] = 0;
+	}
+	else {
+	  square_wave[i] = (uint32_t)(1 * DAC_Range);
+	}
+  }
+}
+
+//sine wave
+void set_sine_wave() {
+  float step = 2.0 * M_PI / DataCount;    //step
+  for(int i = 0; i < DataCount; i++) {
+    float radian = i * step;    //radian
+    float sine_value = sin(radian);        //value range -1 ~ +1
+    sine_wave[i] = (uint32_t)((sine_value + 1.0) / 2.0 * DAC_Range);    //convert value range to 0 ~ 1
+  }
+}
+
+//trapezoidal wave
+void set_trapezoidal_wave() {
+  for(int i = 0; i < DataCount; i++) {
+	if(i < DataCount * 0.25) {
+	  trapezoidal_wave[i] = (uint32_t)((DataCount / (DataCount * 0.25) * i) / DataCount * DAC_Range);
+	}
+	else if(i >= DataCount * 0.25 && i < DataCount * 0.75) {
+	  trapezoidal_wave[i] = (uint32_t)(1 * DAC_Range);
+	}
+	else if(i >= DataCount * 0.75) {
+	  trapezoidal_wave[i] = (uint32_t)(((DataCount / (DataCount * 0.25)) * (DataCount - i)) / DataCount * DAC_Range);
+	}
+  }
+}
+
+//triangular wave
+void set_triangular_wave() {
+  for(int i = 0; i < DataCount; i++) {
+	if(i < DataCount * 0.5) {
+	  triangular_wave[i] = (uint32_t)((DataCount / (DataCount * 0.5) * i) / DataCount * DAC_Range);
+	}
+	else if(i >= DataCount * 0.5) {
+	  triangular_wave[i] = (uint32_t)(((DataCount / (DataCount * 0.5)) * (DataCount - i)) / DataCount * DAC_Range);
+	}
+  }
+}
+
+//initialize
+void Initialization() {
+  LCD_initial();    //initialize lcd
+  LCD_Puts("Wave Type:");    //write sting
+  LCD_GoTo_Position(1, 0);    //move to LCD position
+  LCD_Puts("Sawtooth Wave");    //sawtooth wave
+  HAL_GPIO_WritePin(GPIOB, led0, GPIO_PIN_SET);    //turn on LED
+  set_sawtooth_wave();    //sawtooth wave
+  set_square_wave();    //square wave
+  set_sine_wave();    //sine wave
+  set_trapezoidal_wave();    //trapezoidal wave
+  set_triangular_wave();    //triangular wave
+  HAL_DAC_Init(&hdac1);    //DAC initialization
+  HAL_TIM_Base_Start(&htim2);    //start timer
+  //DAC output sawtooth data
+  HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)sawtooth_wave, DataCount, DAC_ALIGN_12B_R);
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+  HAL_DAC_Stop_DMA(&hdac1, DAC_CHANNEL_1);    //stop DMA
+  uint8_t type_value = wave_type + 1;    //add counter number
+  //check wave type
+  wave_type = (type_value > 4) ? 0 : type_value;
+  switch(wave_type) {
+    //sawtooth
+    case 0:
+	  HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)sawtooth_wave, DataCount, DAC_ALIGN_12B_R);
+	  break;
+    //square wave
+    case 1:
+      HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)square_wave, DataCount, DAC_ALIGN_12B_R);
+      break;
+    //sine wave
+    case 2:
+      HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)sine_wave, DataCount, DAC_ALIGN_12B_R);
+      break;
+    //trapezoidal_wave
+    case 3:
+      HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)trapezoidal_wave, DataCount, DAC_ALIGN_12B_R);
+      break;
+    //triangular wave
+    case 4:
+      HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, (uint32_t*)triangular_wave, DataCount, DAC_ALIGN_12B_R);
+      break;
+    default:
+      break;
+  }
+  lcd_flag = 1;    //set LCD flag
+}
+
+void DisplayText() {
+    while(lcd_flag == 0) {
+	  //wait flag, do nothing
+	  HAL_Delay(1);    //delay
+	}
+	lcd_flag = 0;    //reset flag
+	LCD_Clear();    //clear LCD
+	LCD_GoTo_Position(0, 0);    //move to LCD position
+	LCD_Puts("Wave Type:");    //write sting
+	LCD_GoTo_Position(1, 0);    //move to LCD position
+	switch(wave_type) {
+	  //sawtooth wave
+	  case 0:
+		LCD_Puts("Sawtooth Wave");
+		break;
+	  //square wave
+	  case 1:
+		LCD_Puts("Square Wave");
+		break;
+	  //sine wave
+	  case 2:
+		LCD_Puts("Sine Wave");
+		break;
+	  //trapezoidal wave
+	  case 3:
+		LCD_Puts("Trapezoidal Wave");
+		break;
+	  //triangular wave
+	  case 4:
+		LCD_Puts("Triangular Wave");
+		break;
+	}
+	//switch LED
+	int LED_Array_Length = sizeof(LED_Array)/sizeof(LED_Array[0]);    //LED array Length
+	for(int i = 0; i < LED_Array_Length; i++) {
+	  if(i == wave_type) {
+		HAL_GPIO_WritePin(GPIOB, LED_Array[i], GPIO_PIN_SET);    //turn on LED
+	  }
+	  else {
+		HAL_GPIO_WritePin(GPIOB, LED_Array[i], GPIO_PIN_RESET);    //turn off LED
+	  }
 	}
 }
 /* USER CODE END 0 */
@@ -100,11 +259,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_DAC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
-  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
+  Initialization();    //initialize
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,7 +271,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	DisplayText();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -196,9 +355,9 @@ static void MX_DAC1_Init(void)
   /** DAC channel OUT1 config
   */
   sConfig.DAC_SampleAndHold = DAC_SAMPLEANDHOLD_DISABLE;
-  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  sConfig.DAC_Trigger = DAC_TRIGGER_T2_TRGO;
   sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
-  sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_ENABLE;
+  sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_DISABLE;
   sConfig.DAC_UserTrimming = DAC_TRIMMING_FACTORY;
   if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_1) != HAL_OK)
   {
@@ -229,10 +388,10 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 3999;
+  htim2.Init.Prescaler = 399;
   htim2.Init.CounterMode = TIM_COUNTERMODE_DOWN;
   htim2.Init.Period = 19;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV2;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
   {
@@ -243,7 +402,7 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
   {
@@ -256,18 +415,73 @@ static void MX_TIM2_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel3_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7
+                          |GPIO_PIN_8|GPIO_PIN_9, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
+                          |GPIO_PIN_4, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PC4 PC5 PC6 PC7
+                           PC8 PC9 */
+  GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7
+                          |GPIO_PIN_8|GPIO_PIN_9;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB0 PB1 PB2 PB3
+                           PB4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
+                          |GPIO_PIN_4;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 

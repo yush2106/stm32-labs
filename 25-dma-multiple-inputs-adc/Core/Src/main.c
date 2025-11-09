@@ -73,7 +73,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1) {
 	//ADC channel 2
 	millivolts =((float)ADCBuffer[1]) * 3300.0 / 4095.0;    //convert 12-bit value
 	sprintf(Buffer2, "%7.2f", millivolts);    //convert to value type
-	DataFlag = 1;
+	DataFlag = 1;    //flag
 }
 /* USER CODE END 0 */
 
@@ -119,13 +119,13 @@ int main(void)
   {
     /* USER CODE END WHILE */
     if(DataFlag == 1) {
-      DataFlag = 0;
+      DataFlag = 0;    //data flag
       LCD_GoTo_Position(0, 0);    //move to LCD position row 1
       LCD_Puts(Buffer1);    //display values on LCD
       LCD_GoTo_Position(1, 0);    //move to LCD position row 2
       LCD_Puts(Buffer2);    //display values on LCD
       HAL_Delay(500);    //delay
-	  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADCBuffer, 2);    //start DMA
+	  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADCBuffer, 2);    //restart DMA
     }
     HAL_Delay(1);    //delay
     /* USER CODE BEGIN 3 */

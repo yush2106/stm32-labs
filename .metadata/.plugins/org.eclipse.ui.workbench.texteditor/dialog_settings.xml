@@ -3,11 +3,20 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="DACData"/>
+		<item value="HAL_DAC_ini"/>
+		<item value="HAL_DAC"/>
+		<item value="value_index"/>
+		<item value="sin"/>
+		<item value="HAL_ADC_ConvCpltCallback"/>
+		<item value="Cpltcallback"/>
+		<item value="callback"/>
+		<item value="CpltCallback"/>
+		<item value="Callback"/>
 		<item value="DAC_CHANNEL_1"/>
 		<item value="ADCResult"/>
 		<item value="GPIOA"/>
 		<item value="HAL_TIM_PeriodElapsedCallback"/>
 		<item value="start"/>
-		<item value="HAL_GPIO_EXTI_Callback"/>
 	</list>
 </section>
