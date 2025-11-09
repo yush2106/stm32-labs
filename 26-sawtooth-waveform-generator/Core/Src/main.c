@@ -104,7 +104,7 @@ int main(void)
   MX_DAC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);    //start timer
+  HAL_TIM_Base_Start_IT(&htim2);    //start timer interrupt
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);    //start DAC
   /* USER CODE END 2 */
 

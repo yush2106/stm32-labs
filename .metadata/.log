@@ -2957,3 +2957,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-11-09 20:26:27.058
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-09 22:00:37.958
+!MESSAGE Indexed '27-dma-arbitrary-waveform' (23 sources, 82 headers) in 2.86 sec: 5,463 declarations; 29,428 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-09 23:09:54.073
+!MESSAGE Indexed '27-dma-arbitrary-waveform' (26 sources, 84 headers) in 1.69 sec: 6,433 declarations; 43,979 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0.0079%)
