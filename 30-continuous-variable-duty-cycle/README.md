@@ -34,6 +34,6 @@ Step 3: Connect NUCLEO-L476RG PB3 pin with Arduino UNO A0 pin, and connect NUCLE
 
 Step 4: Set the different CCR pulse in each step, it generates the various output waveform duty cycles.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/30-continuous-variable-duty-cycle/img/30-continuous-variable-duty-cycle-01.jpg.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/30-continuous-variable-duty-cycle/img/30-continuous-variable-duty-cycle-01.jpg)
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/30-continuous-variable-duty-cycle/img/30-continuous-variable-duty-cycle-02.jpg.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/30-continuous-variable-duty-cycle/img/30-continuous-variable-duty-cycle-02.jpg)

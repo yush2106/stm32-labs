@@ -1,0 +1,10 @@
+18:01:05 **** Incremental Build of configuration Release for project 31-multiple-pwm-wavwforms ****
+make -j20 all 
+arm-none-eabi-size  31-multiple-pwm-wavwforms.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8384	     12	   1644	  10040	   2738	31-multiple-pwm-wavwforms.elf
+Finished building: default.size.stdout
+ 
+
+18:01:05 Build Finished. 0 errors, 0 warnings. (took 201ms)
+

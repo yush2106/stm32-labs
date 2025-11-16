@@ -4,7 +4,7 @@ This is a PWM (Pulse Width Modulation) project, try to generate 10kHz half pulse
 
 Set NUCLEO-L476RG PB3 pin for PWM timer channel 2 output.
 
-It connects to Arduino UNO A0 pin, and displays waveform with the ZaidaScope.
+It connects to Arduino UNO A0 pin and displays waveform with the ZaidaScope.
 
 ## Process Step
 

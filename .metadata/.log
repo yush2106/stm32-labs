@@ -3076,3 +3076,9 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-11-16 16:49:33.753
 !MESSAGE Indexed '30-continuous-variable-duty-cycle' (23 sources, 82 headers) in 1.03 sec: 6,137 declarations; 41,880 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-16 17:39:22.322
+!MESSAGE Indexed '31-multiple-pwm-wavwforms' (23 sources, 82 headers) in 2.7 sec: 6,131 declarations; 41,827 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-16 17:56:23.560
+!MESSAGE Indexed '31-multiple-pwm-wavwforms' (23 sources, 82 headers) in 1.12 sec: 6,137 declarations; 41,976 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0042%)
