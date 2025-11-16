@@ -21,3 +21,5 @@ Step 5: Pressed the onboard button to turn on or turn off the onboard LED.
 ![image](https://github.com/yush2106/stm32-labs/blob/main/12-led-for-external-interrupt/img/12-led-for-external-interrupt-02.jpg)
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/12-led-for-external-interrupt/img/12-led-for-external-interrupt-03.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/06-push-button-led/img/06-push-button-led-01.jpg)

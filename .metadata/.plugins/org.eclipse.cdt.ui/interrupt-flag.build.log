@@ -1,0 +1,20 @@
+09:54:00 **** Incremental Build of configuration Release for project interrupt-flag ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "interrupt-flag.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\interrupt-flag\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="interrupt-flag.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: interrupt-flag.elf
+ 
+arm-none-eabi-size  interrupt-flag.elf 
+arm-none-eabi-objdump -h -S interrupt-flag.elf  > "interrupt-flag.list"
+arm-none-eabi-objcopy  -O binary interrupt-flag.elf  "interrupt-flag.bin"
+   text	   data	    bss	    dec	    hex	filename
+   4004	     12	   1572	   5588	   15d4	interrupt-flag.elf
+Finished building: default.size.stdout
+ 
+Finished building: interrupt-flag.list
+Finished building: interrupt-flag.bin
+ 
+ 
+
+09:54:00 Build Finished. 0 errors, 0 warnings. (took 495ms)
+

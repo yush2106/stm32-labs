@@ -1,6 +1,7 @@
-12:52:14 **** Incremental Build of configuration Release for project 13-multiple-external-interrupts ****
+22:50:18 **** Incremental Build of configuration Release for project 13-multiple-external-interrupts ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
 arm-none-eabi-gcc -o "13-multiple-external-interrupts.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\13-multiple-external-interrupts\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13-multiple-external-interrupts.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 13-multiple-external-interrupts.elf
  
@@ -8,13 +9,13 @@ arm-none-eabi-size  13-multiple-external-interrupts.elf
 arm-none-eabi-objdump -h -S 13-multiple-external-interrupts.elf  > "13-multiple-external-interrupts.list"
 arm-none-eabi-objcopy  -O binary 13-multiple-external-interrupts.elf  "13-multiple-external-interrupts.bin"
    text	   data	    bss	    dec	    hex	filename
-   7832	     12	   1708	   9552	   2550	13-multiple-external-interrupts.elf
+   4000	     12	   1572	   5584	   15d0	13-multiple-external-interrupts.elf
 Finished building: default.size.stdout
  
-Finished building: 13-multiple-external-interrupts.bin
 Finished building: 13-multiple-external-interrupts.list
+Finished building: 13-multiple-external-interrupts.bin
  
  
 
-12:52:14 Build Finished. 0 errors, 0 warnings. (took 494ms)
+22:50:18 Build Finished. 0 errors, 0 warnings. (took 554ms)
 
