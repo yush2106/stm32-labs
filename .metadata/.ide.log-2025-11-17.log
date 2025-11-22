@@ -1,0 +1,34 @@
+2025-11-17 00:00:20,219 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 624759480 Bytes (972029952)
+2025-11-17 00:00:20,318 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8L4
+2025-11-17 00:00:20,318 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-11-17 00:00:20,318 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-11-17 00:00:20,318 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-11-17 00:00:20,318 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-11-17 00:00:20,319 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-11-17 00:00:20,319 [INFO] CodeGenerator:892 - code generatio: config db path: C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\\db\
+2025-11-17 00:00:20,384 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\MXTmpFiles\license.tmp_save
+2025-11-17 00:00:20,439 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\MXTmpFiles\license.tmp
+2025-11-17 00:00:20,452 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\MXTmpFiles\gpio.tmp_save
+2025-11-17 00:00:20,496 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\MXTmpFiles\gpio.tmp
+2025-11-17 00:00:20,559 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Src\stm32l4xx_it.c_save
+2025-11-17 00:00:20,611 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Src\stm32l4xx_it.c
+2025-11-17 00:00:20,616 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Inc\stm32l4xx_it.h_save
+2025-11-17 00:00:20,662 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Inc\stm32l4xx_it.h
+2025-11-17 00:00:20,673 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Src\stm32l4xx_hal_msp.c_save
+2025-11-17 00:00:20,741 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Src\stm32l4xx_hal_msp.c
+2025-11-17 00:00:20,745 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\MXTmpFiles\system.tmp_save
+2025-11-17 00:00:20,785 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\MXTmpFiles\system.tmp
+2025-11-17 00:00:20,794 [INFO] CodeEngine:321 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Inc\stm32l4xx_hal_conf.h_save
+2025-11-17 00:00:20,838 [INFO] CodeEngine:345 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Inc\stm32l4xx_hal_conf.h
+2025-11-17 00:00:20,855 [WARN] IPConfigManager:3811 - IP not found : TIM
+2025-11-17 00:00:20,856 [WARN] CodeGenerator:4259 - IP not found : null
+2025-11-17 00:00:20,862 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Inc\main.h_save
+2025-11-17 00:00:20,909 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Inc\main.h
+2025-11-17 00:00:20,914 [INFO] CodeEngine:265 - oldGeneratedFile, D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Src\main.c_save
+2025-11-17 00:00:21,001 [INFO] CodeEngine:289 - Generated code: D:\STM32\Lab\32-potentiometer-controlled-duty-cycle\Core\Src\main.c
+2025-11-17 00:00:21,272 [INFO] ProjectBuilder:3606 - Time for Copy HAL[1] : 142mS.
+2025-11-17 00:00:21,275 [INFO] ProjectBuilder:5216 - Project Generator version: 4.7.0-B52
+2025-11-17 00:00:21,329 [INFO] ConfigFileManager:1595 - The Die is : DIE415
+2025-11-17 00:00:21,828 [INFO] ProjectBuilder:5496 - Time for Generating toolchain IDE Files: 553mS.
+2025-11-17 00:00:21,828 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.
+2025-11-17 00:00:21,830 [INFO] ProjectBuilder:3463 - Time for Copy CMSIS : 0mS.

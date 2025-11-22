@@ -56,7 +56,7 @@ The ARR (auto-reload register) is (A+1) = (99+1) = 100.
 For the half duty cycle, set pulse to 50.
 
 $$
-D = \frac{CCR_{pulse}}{ARR} = \frac{50}{100} = 0.5 = 50\%
+D = \frac{CCR_{pulse}}{ARR} = \frac{50}{100} = 0.5 = 50\\%
 $$
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/29-pwm-10khz-half-pulsewidth/img/29-pwm-10khz-half-pulsewidth-02.jpg)

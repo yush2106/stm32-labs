@@ -45,13 +45,17 @@ Step 3: NUCLEO-L476RG PB3, PA15 and PB10 pins connect to Arduino UNO A0, A1 and 
 Step 4: The multiple waveforms are displayed in these following pictures.
 
 Multiple waveforms.
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/31-multiple-pwm-wavwforms/img/31-multiple-pwm-wavwforms-05.jpg)
 
-50% duty cycle.
+25% duty cycle.
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/31-multiple-pwm-wavwforms/img/31-multiple-pwm-wavwforms-06.jpg)
 
-25% duty cycle.
+50% duty cycle.
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/31-multiple-pwm-wavwforms/img/31-multiple-pwm-wavwforms-07.jpg)
 
 75% duty cycle.
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/31-multiple-pwm-wavwforms/img/31-multiple-pwm-wavwforms-08.jpg)
