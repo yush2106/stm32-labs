@@ -14,3 +14,5 @@ Step 3: Trun off LED.
 Step 4: Delay.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/01-flash-led/img/01-flash-led.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/01-flash-led/img/02-flash-led.jpg)

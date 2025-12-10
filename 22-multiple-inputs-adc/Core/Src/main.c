@@ -101,28 +101,29 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     HAL_ADC_Start(&hadc1);    //start ADC
-	HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
-	ADCResult1 = HAL_ADC_GetValue(&hadc1);    //channel 1
+    HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
+    ADCResult1 = HAL_ADC_GetValue(&hadc1);    //channel 1
 
-	HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
-	ADCResult2 = HAL_ADC_GetValue(&hadc1);    //channel 2
-	HAL_ADC_Stop(&hadc1);    //stop ADC
+    HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion
+    ADCResult2 = HAL_ADC_GetValue(&hadc1);    //channel 2
+    HAL_ADC_Stop(&hadc1);    //stop ADC
 
-	LCD_Clear();    //clear LCD
+    LCD_Clear();    //clear LCD
 
-	millivolts = ((float)ADCResult1) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
-	sprintf(buff, "%7.2f", millivolts);
-	LCD_GoTo_Position(0, 0);    //go to lcd position
-	LCD_Puts(buff);    //display values on LCD
+    millivolts = ((float)ADCResult1) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
+    sprintf(buff, "%7.2f", millivolts);
+    LCD_GoTo_Position(0, 0);    //go to lcd position
+    LCD_Puts(buff);    //display values on LCD
 
-	millivolts = ((float)ADCResult2) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
-	sprintf(buff, "%7.2f", millivolts);
-	LCD_GoTo_Position(1, 0);    //go to lcd position
-	LCD_Puts(buff);    //display values on LCD
+    millivolts = ((float)ADCResult2) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
+    sprintf(buff, "%7.2f", millivolts);
+    LCD_GoTo_Position(1, 0);    //go to lcd position
+    LCD_Puts(buff);    //display values on LCD
 
-	HAL_Delay(500);    //delay
+    HAL_Delay(500);    //delay
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -134,35 +134,36 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     //Digit Position 0
-	int DigitPosition0 = DisplayNumber > 0 ? DisplayNumber % 10 : 0;
-	//Digit Position 1
-	int DigitPosition1 = (DisplayNumber - DigitPosition0) % 100 * 0.1;
-	//Digit Position 2
-	int DigitPosition2 = (DisplayNumber - DigitPosition1*10 - DigitPosition0) % 1000 * 0.01;
-	//Digit Position 3
-	int DigitPosition3 = (DisplayNumber - DigitPosition2*100 - DigitPosition1*10 - DigitPosition0) * 0.001;
-	//Digit Number Array
-	int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
-	int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
-	int IsLeading = 0;    //leading number greater than zero
+    int DigitPosition0 = DisplayNumber > 0 ? DisplayNumber % 10 : 0;
+    //Digit Position 1
+    int DigitPosition1 = (DisplayNumber - DigitPosition0) % 100 * 0.1;
+    //Digit Position 2
+    int DigitPosition2 = (DisplayNumber - DigitPosition1*10 - DigitPosition0) % 1000 * 0.01;
+    //Digit Position 3
+    int DigitPosition3 = (DisplayNumber - DigitPosition2*100 - DigitPosition1*10 - DigitPosition0) * 0.001;
+    //Digit Number Array
+    int DigitNumberArray[] = {DigitPosition3, DigitPosition2, DigitPosition1, DigitPosition0};
+    int ArrayLength = sizeof(DigitNumberArray) / sizeof(DigitNumberArray[0]);    //array length
+    int IsLeading = 0;    //leading number greater than zero
 
     for(int i = 0; i < ArrayLength; i++) {
       //ignore leading zero
-	  if(IsLeading == 0 && i < (ArrayLength-1)) {
-		if(DigitNumberArray[i] == 0) {
-		  continue;
-		}
-		else if(DigitNumberArray[i] > 0) {
-			IsLeading = 1;
-		}
-	  }
-	  GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
-	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
-	  HAL_Delay(5);    //delay
-	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
-	}
+      if(IsLeading == 0 && i < (ArrayLength-1)) {
+        if(DigitNumberArray[i] == 0) {
+          continue;
+        }
+        else if(DigitNumberArray[i] > 0) {
+          IsLeading = 1;
+        }
+      }
+      GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
+      HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
+      HAL_Delay(5);    //delay
+      HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
+    }
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

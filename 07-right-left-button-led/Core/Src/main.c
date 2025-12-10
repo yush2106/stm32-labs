@@ -40,7 +40,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
@@ -49,7 +48,6 @@ UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -88,7 +86,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   int bit_position = 0;    //led bit position
   HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_SET);    //turn on the default led0
@@ -98,31 +95,30 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    if(HAL_GPIO_ReadPin(GPIOA, LeftButton) == 0){
+      HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_RESET);
+      bit_position++;    //move left
+      if(bit_position > 7){
+        bit_position = 0;    //set bit position to the most right position
+      }
+      HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_SET);
+      //debouncing
+      HAL_Delay(100);
+      while(HAL_GPIO_ReadPin(GPIOA, LeftButton) == 0);
+    }
+
+    if(HAL_GPIO_ReadPin(GPIOA, RightButton) == 0){
+      HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_RESET);
+      bit_position--;    //move right
+      if(bit_position < 0){
+        bit_position = 7;    //set bit position to the most left position
+      }
+      HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_SET);
+      //debouncing
+      HAL_Delay(100);
+      while(HAL_GPIO_ReadPin(GPIOA, RightButton) == 0);
+    }
     /* USER CODE END WHILE */
-
-	if(HAL_GPIO_ReadPin(GPIOA, LeftButton) == 0){
-		HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_RESET);
-		bit_position++;    //move left
-		if(bit_position > 7){
-		  bit_position = 0;    //set bit position to the most right position
-		}
-		HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_SET);
-		//debouncing
-		HAL_Delay(100);
-		while(HAL_GPIO_ReadPin(GPIOA, LeftButton) == 0);
-	}
-
-	if(HAL_GPIO_ReadPin(GPIOA, RightButton) == 0){
-		HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_RESET);
-		bit_position--;    //move right
-		if(bit_position < 0){
-		  bit_position = 7;    //set bit position to the most left position
-		}
-		HAL_GPIO_WritePin(GPIOC, LED_array[bit_position], GPIO_PIN_SET);
-		//debouncing
-		HAL_Delay(100);
-		while(HAL_GPIO_ReadPin(GPIOA, RightButton) == 0);
-	}
 
     /* USER CODE BEGIN 3 */
   }
@@ -179,41 +175,6 @@ void SystemClock_Config(void)
 }
 
 /**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART2_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -227,43 +188,31 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_4
                           |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
-
   /*Configure GPIO pins : PC0 PC1 PC2 PC4
                            PC5 PC6 PC7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4
-                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;    //
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_4
+                          |GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  /*Configure GPIO pin : PC3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA13 PA14 */
-  GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14;    //right button and left button
+  GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;    //pull up
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */

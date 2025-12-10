@@ -58,15 +58,15 @@ static void MX_TIM2_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t CounterNumber = 0;    //count number
-char Text[17];
+char Text[2];
 uint8_t DataFlag = 0;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-//	DataFlag = 1;
-//	itoa(CounterNumber, Text, 10);    //convert to string type
-//  CounterNumber++;    //increase count number
-//  CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter
-//	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);    //change LED status
+  DataFlag = 1;
+  int radix = 10;    //define for decimal
+  itoa(CounterNumber, Text, radix);    //convert integer to string type, decimal base
+  CounterNumber++;    //increase count number
+  CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter
 }
 /* USER CODE END 0 */
 
@@ -102,6 +102,7 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   LCD_initial();    //initialize lcd
+  LCD_GoTo_Position(0, 0);    //go to lcd position
   LCD_Puts("Count:");    //display text on LCD
 
   HAL_TIM_Base_Start_IT(&htim2);    //start timer
@@ -111,29 +112,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    if(DataFlag == 1) {
+      DataFlag = 0;
+      LCD_GoTo_Position(1, 0);    //go to lcd position
+      LCD_Puts(Text);    //display text on LCD)
+    }
+    HAL_Delay(1);    //delay
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
-	/*
-	while(DataFlag == 0){
-	  //wait flag, do nothing
-	}
-	if(DataFlag == 1) {
-      DataFlag = 0;
-	  LCD_GoTo_Position(1, 0);    //go to lcd position
-	  LCD_PutCh(*Text);    //display text on LCD)
-	  HAL_Delay(1000);    //delay
-	}
-    */
-
-    itoa(CounterNumber, Text, 10);    //convert to string type
-    LCD_GoTo_Position(1, 0);    //go to lcd position
-    LCD_PutCh(*Text);    //display text on LCD)
-    CounterNumber++;    //increase count number
-    CounterNumber = CounterNumber > 9 ? 0 : CounterNumber;    //reset counter
-    HAL_Delay(1000);    //delay
-
   }
   /* USER CODE END 3 */
 }
@@ -245,22 +232,11 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7
                           |GPIO_PIN_8|GPIO_PIN_9, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : PA5 */
-  GPIO_InitStruct.Pin = GPIO_PIN_5;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PC4 PC5 PC6 PC7
                            PC8 PC9 */

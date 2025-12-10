@@ -33,6 +33,8 @@ Step 6: Delay.
 
 Repeat these steps.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-circuit.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-01.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/03-flash-leds-in-sequence/img/03-flash-leds-in-sequence-02.jpg)
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/04-leds-for-8-bit/img/04-leds-for-8-bit-01.jpg)

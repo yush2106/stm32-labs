@@ -1,0 +1,112 @@
+#include "stm32l4xx_hal.h"
+#include "lcd.h"
+
+//enable and disable
+void LCD_Strobe() {
+	HAL_GPIO_WritePin(GPIOC, LCD_EN, GPIO_PIN_SET);    //Enable = 1
+	HAL_Delay(0.1);    //delay
+	HAL_GPIO_WritePin(GPIOC, LCD_EN, GPIO_PIN_RESET);    //Enable = 0
+	HAL_Delay(0.1);    //delay
+}
+
+//write command
+void LCD_Write_Cmd(unsigned char c) {
+	unsigned int d;
+
+	d = c;
+	d = d & 0x00F0;    //register mask
+	GPIOC -> ODR = d;    //write to register
+	HAL_GPIO_WritePin(GPIOC, LCD_RS, GPIO_PIN_RESET);    //RS=0, write to command type
+	LCD_Strobe();    //enable and disable
+
+	d = c;
+	d = (d << 4) & 0x00F0;    //shift left 4 position and register mask
+	GPIOC -> ODR = d;    //write to register
+	HAL_GPIO_WritePin(GPIOC, LCD_RS, GPIO_PIN_RESET);    //RS=0, write to command type
+	LCD_Strobe();    //enable and disable
+}
+
+//write data
+void LCD_Write_Data(unsigned char c) {
+	unsigned int d;
+
+	d = c;
+	d = d & 0x00F0;    //register mask
+	GPIOC -> ODR = d;    //write to register
+	HAL_GPIO_WritePin(GPIOC, LCD_RS, GPIO_PIN_SET);    //RS=1, write to data type
+	LCD_Strobe();    //enable and disable
+
+	d = c;
+	d = (d << 4) & 0x00F0;    //shift left 4 position and register mask
+	GPIOC -> ODR = d;    //write to register
+	HAL_GPIO_WritePin(GPIOC, LCD_RS, GPIO_PIN_SET);    //RS=1, write to data type
+	LCD_Strobe();    //enable and disable
+}
+
+//clear lcd
+void LCD_Clear() {
+	LCD_Write_Cmd(0x01);    //clear lcd
+	HAL_Delay(5);
+}
+
+//write a string
+void LCD_Puts(const char *s) {
+	while(*s) {
+		LCD_Write_Data(*s++);
+	}
+}
+
+//write single char
+void LCD_PutCh(char c) {
+	unsigned int d;
+
+	d = c;
+	d = d & 0x00F0;    //register mask
+	GPIOC -> ODR = d;    //write to register
+	HAL_GPIO_WritePin(GPIOC, LCD_RS, GPIO_PIN_SET);    //RS=1, write to data type
+	LCD_Strobe();    //enable and disable
+
+	d = c;
+	d = (d << 4) & 0x00F0;    //shift left 4 position and register mask
+	GPIOC -> ODR = d;    //write to register
+	HAL_GPIO_WritePin(GPIOC, LCD_RS, GPIO_PIN_SET);    //RS=1, write to data type
+	LCD_Strobe();    //enable and disable
+}
+
+//go to lcd position
+void LCD_GoTo_Position(int row, int col) {
+	char address = 0x00;
+	if(row == 0) {
+		address = 0x00;    //first row
+	}
+	else if(row == 1) {
+		address = 0x40;    //second row
+	}
+	address += col;
+
+	LCD_Write_Cmd(0x80 | address);    //set DDRAM address
+}
+
+//LCD initial process
+void LCD_initial() {
+	GPIOC -> ODR = 0x0;    //reset all register data
+	HAL_Delay(50);    //power on, then wait more than 40ms
+	GPIOC -> ODR = 0x30;    //DB4 -> On, DB5 -> On
+	LCD_Strobe();    //lcd enable and disable
+	HAL_Delay(5);    //delay
+	LCD_Strobe();    //lcd enable and disable
+	HAL_Delay(1);    //delay
+	LCD_Strobe();    //lcd enable and disable
+	HAL_Delay(5);    //delay
+	GPIOC -> ODR = 0x20;    //DB4 -> Off, DB5 -> On
+	LCD_Strobe();    //lcd enable and disable
+	HAL_Delay(5);    //delay
+	LCD_Write_Cmd(0x28);    //DB4 -> Off, 4-bit, DB3 -> On, 2-Line, DB2 -> Off, 5*8 font
+	HAL_Delay(5);    //delay
+	LCD_Write_Cmd(0x0C);    //DB2 -> On, display on, DB1 -> On, show cursor, DB0 -> On, blinking cursor
+	HAL_Delay(5);    //delay
+	LCD_Clear();    //clear display
+	HAL_Delay(5);    //delay
+	LCD_Write_Cmd(0x06);    //DB1 -> On, automatic increment, DB0 - > off, display shift off
+	HAL_Delay(5);    //delay
+}

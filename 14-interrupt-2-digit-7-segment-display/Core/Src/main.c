@@ -122,19 +122,20 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-	//MSB number
-	if(MSB != 0){
-	  GPIOC -> ODR = LED_Hex[MSB];    //write to digit1 register
-	  HAL_GPIO_WritePin(GPIOC, digit1, GPIO_PIN_SET);    //enable digit1
-	  HAL_Delay(10);    //delay time
-	  HAL_GPIO_WritePin(GPIOC, digit1, GPIO_PIN_RESET);    //disable digit1
-	}
+    //MSB number
+    if(MSB != 0){
+      GPIOC -> ODR = LED_Hex[MSB];    //write to digit1 register
+      HAL_GPIO_WritePin(GPIOC, digit1, GPIO_PIN_SET);    //enable digit1
+      HAL_Delay(10);    //delay time
+      HAL_GPIO_WritePin(GPIOC, digit1, GPIO_PIN_RESET);    //disable digit1
+    }
 	//LSB number
     GPIOC -> ODR = LED_Hex[LSB];    //write to digit2 register
     HAL_GPIO_WritePin(GPIOC, digit2, GPIO_PIN_SET);    //enable digit2
     HAL_Delay(10);    //delay time
     HAL_GPIO_WritePin(GPIOC, digit2, GPIO_PIN_RESET);    //disable digit2
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

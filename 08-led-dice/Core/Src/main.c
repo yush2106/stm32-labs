@@ -18,11 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stdlib.h"
-#include "time.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdlib.h"
+#include "time.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-int LED_Array[] = {led0, led1, led2, led3, led4, led5, led6};
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -41,7 +41,6 @@ int LED_Array[] = {led0, led1, led2, led3, led4, led5, led6};
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
@@ -50,13 +49,14 @@ UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+int LED_Array[] = {led0, led1, led2, led3, led4, led5, led6};
+
 void Reset_All_Leds() {
 	for(int i = 0; i < 7; i++){
 		HAL_GPIO_WritePin(GPIOC, LED_Array[i], GPIO_PIN_RESET);    //Reset all Leds
@@ -93,62 +93,59 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-  srand(time(NULL));    //random number seed
-  Reset_All_Leds();    //Reset all Leds
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    //wait for button pressed
+    while(HAL_GPIO_ReadPin(GPIOC, button) == 1) {
+      //do nothing
+    }
+
+    int dice_number = rand()%6 + 1;    //generate random dice number
+
+    switch(dice_number) {
+      case 1:    //number 1
+        HAL_GPIO_WritePin(GPIOC, LED_Array[3], GPIO_PIN_SET);
+        break;
+      case 2:    //number 2
+        HAL_GPIO_WritePin(GPIOC, LED_Array[1], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[5], GPIO_PIN_SET);
+        break;
+      case 3:    //number 3
+        HAL_GPIO_WritePin(GPIOC, LED_Array[1], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[3], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[5], GPIO_PIN_SET);
+        break;
+      case 4:    //number 4
+        HAL_GPIO_WritePin(GPIOC, LED_Array[0], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[2], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[4], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[6], GPIO_PIN_SET);
+        break;
+      case 5:    //number 5
+        HAL_GPIO_WritePin(GPIOC, LED_Array[0], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[2], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[3], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[4], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[6], GPIO_PIN_SET);
+        break;
+      case 6:    //number 6
+        HAL_GPIO_WritePin(GPIOC, LED_Array[0], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[1], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[2], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[4], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[5], GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOC, LED_Array[6], GPIO_PIN_SET);
+        break;
+    }
+    HAL_Delay(5000);    //delay
+    Reset_All_Leds();    //Reset all Leds
     /* USER CODE END WHILE */
-
-	//wait for button pressed
-	while(HAL_GPIO_ReadPin(GPIOC, button) == 1) {
-		//do nothing
-	}
-
-	int dice_number = rand()%6 + 1;    //generate random dice number
-
-	switch(dice_number) {
-	case 1:    //number 1
-		HAL_GPIO_WritePin(GPIOC, LED_Array[3], GPIO_PIN_SET);
-		break;
-	case 2:    //number 2
-		HAL_GPIO_WritePin(GPIOC, LED_Array[1], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[5], GPIO_PIN_SET);
-		break;
-	case 3:    //number 3
-		HAL_GPIO_WritePin(GPIOC, LED_Array[1], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[3], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[5], GPIO_PIN_SET);
-		break;
-	case 4:    //number 4
-		HAL_GPIO_WritePin(GPIOC, LED_Array[0], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[2], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[4], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[6], GPIO_PIN_SET);
-		break;
-	case 5:    //number 5
-		HAL_GPIO_WritePin(GPIOC, LED_Array[0], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[2], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[3], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[4], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[6], GPIO_PIN_SET);
-		break;
-	case 6:    //number 6
-		HAL_GPIO_WritePin(GPIOC, LED_Array[0], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[1], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[2], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[4], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[5], GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, LED_Array[6], GPIO_PIN_SET);
-		break;
-	}
-	HAL_Delay(5000);    //delay
-	Reset_All_Leds();    //Reset all Leds
 
     /* USER CODE BEGIN 3 */
   }
@@ -205,41 +202,6 @@ void SystemClock_Config(void)
 }
 
 /**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART2_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -253,16 +215,10 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
                           |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
@@ -278,13 +234,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 

@@ -129,22 +129,23 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     for(int i = 0; i < ArrayLength; i++) {
       //ignore leading zero
-	  if(IsLeading == 0 && i < (ArrayLength-1)) {
-		if(DigitNumberArray[i] == 0) {
-		  continue;
-		}
-		else if(DigitNumberArray[i] > 0) {
-			IsLeading = 1;
-		}
-	  }
+      if(IsLeading == 0 && i < (ArrayLength-1)) {
+        if(DigitNumberArray[i] == 0) {
+          continue;
+        }
+        else if(DigitNumberArray[i] > 0) {
+          IsLeading = 1;
+        }
+      }
       GPIOC -> ODR = LED_Hex[DigitNumberArray[i]];    //write to register
-	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
-	  HAL_Delay(5);    //delay
-	  HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
+      HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_SET);    //enabled
+      HAL_Delay(5);    //delay
+      HAL_GPIO_WritePin(GPIOC, DigitArray[i], GPIO_PIN_RESET);    //disabled
     }
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -3,6 +3,12 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="ADC_HandleTypeDef hadc1;"/>
+		<item value="timer_counter"/>
+		<item value="Delay"/>
+		<item value="delay"/>
+		<item value="LCDTask_attributes"/>
+		<item value="defaultTaskHandle"/>
 		<item value="DACData"/>
 		<item value="HAL_DAC_ini"/>
 		<item value="HAL_DAC"/>
@@ -12,11 +18,5 @@
 		<item value="Cpltcallback"/>
 		<item value="callback"/>
 		<item value="CpltCallback"/>
-		<item value="Callback"/>
-		<item value="DAC_CHANNEL_1"/>
-		<item value="ADCResult"/>
-		<item value="GPIOA"/>
-		<item value="HAL_TIM_PeriodElapsedCallback"/>
-		<item value="start"/>
 	</list>
 </section>

@@ -103,7 +103,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     HAL_ADC_PollForConversion(&hadc1, 100);    //poll and conversion from ADC
     ADCResult = HAL_ADC_GetValue(&hadc1);    //get value from ADC
     Temperature = ((float)ADCResult) * 3300.0 / 4095.0;    //convert 12-bit
@@ -112,6 +111,8 @@ int main(void)
     sprintf(Buff, "%5.2f", Temperature);    //convert value type
     LCD_Puts(Buff);    //display temperature value
     HAL_Delay(5000);    //delay
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

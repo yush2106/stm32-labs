@@ -33,3 +33,5 @@ Step 10: Set the digit pins disabled.
 ![image](https://github.com/yush2106/stm32-labs/blob/main/11-two-digit-multiplexed-7-segment-display/img/11-two-digit-multiplexed-7-segment-display-02.jpg)
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/11-two-digit-multiplexed-7-segment-display/img/11-two-digit-multiplexed-7-segment-display-03.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/11-two-digit-multiplexed-7-segment-display/img/11-two-digit-multiplexed-7-segment-display-04.jpg)

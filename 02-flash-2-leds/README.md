@@ -17,8 +17,10 @@ Step 5: Trun on LED2.
 
 Step 6: Delay.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/02-flash-2-leds/img/02-flash-2-leds-circuit.jpg)
-
 ![image](https://github.com/yush2106/stm32-labs/blob/main/02-flash-2-leds/img/02-flash-2-leds-01.jpg)
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/02-flash-2-leds/img/02-flash-2-leds-02.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/02-flash-2-leds/img/02-flash-2-leds-03.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/02-flash-2-leds/img/02-flash-2-leds-04.jpg)

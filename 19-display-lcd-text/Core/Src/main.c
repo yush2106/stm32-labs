@@ -88,9 +88,9 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   LCD_initial();    //initialize lcd
-  LCD_Puts("Hello, STM32,");    //write sting
+  LCD_Puts("Hello, STM32,");    //write string
   LCD_GoTo_Position(1, 0);    //move to row 1, column 0
-  LCD_Puts("LCD Project.");    //write sting
+  LCD_Puts("LCD Project.");    //write string
   /* USER CODE END 2 */
 
   /* Infinite loop */

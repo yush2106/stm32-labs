@@ -117,7 +117,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
     if(DataFlag == 1) {
       DataFlag = 0;    //data flag
       LCD_GoTo_Position(0, 0);    //move to LCD position row 1
@@ -125,9 +124,11 @@ int main(void)
       LCD_GoTo_Position(1, 0);    //move to LCD position row 2
       LCD_Puts(Buffer2);    //display values on LCD
       HAL_Delay(500);    //delay
-	  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADCBuffer, 2);    //restart DMA
+      HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADCBuffer, 2);    //restart DMA
     }
     HAL_Delay(1);    //delay
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -24,6 +24,12 @@ Counter Period: **999**
 
 auto-reload  preload: **Enable**
 
+PWM Generation Channel 1
+
+Mode: **PWM mode 1**
+
+Pulse (32 bits value): **0** (modified by ADC input value)
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/32-potentiometer-controlled-duty-cycle/img/32-potentiometer-controlled-duty-cycle-02.jpg)
 
 Step 3: ADC1 settings.

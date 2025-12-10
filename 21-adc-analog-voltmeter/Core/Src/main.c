@@ -58,7 +58,6 @@ static void MX_ADC1_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint32_t ADCResult = 0;
-ADC_HandleTypeDef hadc1;
 /* USER CODE END 0 */
 
 /**
@@ -103,17 +102,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    //ADC conversion
+    HAL_ADC_PollForConversion(&hadc1, 100);    //ADC polling timeout 100ms
+    ADCResult = HAL_ADC_GetValue(&hadc1);
+    millivolts = ((float)ADCResult) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
+    LCD_GoTo_Position(1, 0);    //go to lcd position
+
+    sprintf(buff, "%7.2f", millivolts);
+    LCD_Puts(buff);
+    HAL_Delay(500);
     /* USER CODE END WHILE */
 
-	//ADC conversion
-	HAL_ADC_PollForConversion(&hadc1, 100);    //ADC polling timeout 100ms
-	ADCResult = HAL_ADC_GetValue(&hadc1);
-	millivolts = ((float)ADCResult) * 3300.0 / 4095.0;    //12-bit to millivolts conversion
-	LCD_GoTo_Position(1, 0);    //go to lcd position
-
-	sprintf(buff, "%7.2f", millivolts);
-	LCD_Puts(buff);
-	HAL_Delay(500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
