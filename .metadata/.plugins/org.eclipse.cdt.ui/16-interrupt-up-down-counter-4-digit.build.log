@@ -1,4 +1,4 @@
-20:53:07 **** Incremental Build of configuration Release for project 16-interrupt-up-down-counter-4-digit ****
+21:50:05 **** Build of configuration Release for project 16-interrupt-up-down-counter-4-digit ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "16-interrupt-up-down-counter-4-digit.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\16-interrupt-up-down-counter-4-digit\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="16-interrupt-up-down-counter-4-digit.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -16,5 +16,5 @@ Finished building: 16-interrupt-up-down-counter-4-digit.list
  
  
 
-20:53:08 Build Finished. 0 errors, 0 warnings. (took 492ms)
+21:50:06 Build Finished. 0 errors, 0 warnings. (took 646ms)
 

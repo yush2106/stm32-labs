@@ -1,4 +1,4 @@
-14:54:26 **** Incremental Build of configuration Release for project 04-leds-for-8-bit ****
+21:49:58 **** Build of configuration Release for project 04-leds-for-8-bit ****
 make -j20 all 
 arm-none-eabi-size  04-leds-for-8-bit.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  04-leds-for-8-bit.elf
 Finished building: default.size.stdout
  
 
-14:54:27 Build Finished. 0 errors, 0 warnings. (took 261ms)
+21:49:58 Build Finished. 0 errors, 0 warnings. (took 248ms)
 

@@ -1,20 +1,10 @@
-23:42:15 **** Incremental Build of configuration Release for project 18-up-counter-4-digit-timer-interrupt ****
+21:50:06 **** Build of configuration Release for project 18-up-counter-4-digit-timer-interrupt ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "18-up-counter-4-digit-timer-interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\18-up-counter-4-digit-timer-interrupt\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="18-up-counter-4-digit-timer-interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 18-up-counter-4-digit-timer-interrupt.elf
- 
 arm-none-eabi-size  18-up-counter-4-digit-timer-interrupt.elf 
-arm-none-eabi-objdump -h -S 18-up-counter-4-digit-timer-interrupt.elf  > "18-up-counter-4-digit-timer-interrupt.list"
-arm-none-eabi-objcopy  -O binary 18-up-counter-4-digit-timer-interrupt.elf  "18-up-counter-4-digit-timer-interrupt.bin"
    text	   data	    bss	    dec	    hex	filename
    7392	     72	   1768	   9232	   2410	18-up-counter-4-digit-timer-interrupt.elf
 Finished building: default.size.stdout
  
-Finished building: 18-up-counter-4-digit-timer-interrupt.bin
-Finished building: 18-up-counter-4-digit-timer-interrupt.list
- 
- 
 
-23:42:16 Build Finished. 0 errors, 0 warnings. (took 509ms)
+21:50:06 Build Finished. 0 errors, 0 warnings. (took 242ms)
 

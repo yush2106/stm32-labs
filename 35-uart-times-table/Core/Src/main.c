@@ -100,6 +100,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	sprintf(buff, "%s", "Input number: ");
+	HAL_UART_Transmit(&huart2, (uint8_t*) buff, strlen(buff), HAL_MAX_DELAY);
     while(1) {
       HAL_UART_Receive(&huart2, (uint8_t*)Rx, 1, HAL_MAX_DELAY);    //receive keyboard input character
       HAL_UART_Transmit(&huart2, (uint8_t*)Rx, 1, HAL_MAX_DELAY);    //echo the input character
@@ -118,7 +120,7 @@ int main(void)
     HAL_UART_Transmit(&huart2, (uint8_t*) "\n\r", 2, HAL_MAX_DELAY);    //new line
 
     for(int i = 0; i < 9; i++) {
-      sprintf(buff, "%i * %i = %i\n\r", final_int, (i+1), final_int * (i+1));    //write text to buffer
+      sprintf(buff, "%i x %i = %i\n\r", final_int, (i+1), final_int * (i+1));    //write text to buffer
       HAL_UART_Transmit(&huart2, (uint8_t*) buff, strlen(buff), HAL_MAX_DELAY);    //echo the input character
     }
     HAL_UART_Transmit(&huart2, (uint8_t*) "\n\r", 2, HAL_MAX_DELAY);    //new line
