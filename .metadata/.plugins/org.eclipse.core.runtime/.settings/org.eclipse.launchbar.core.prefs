@@ -5,3 +5,5 @@ configDescList=
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:18-up-counter-4-digit-timer-interrupt\ Release/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:18-up-counter-4-digit-timer-interrupt\ Release/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:38-arduino-temperature-uart\ Release/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:38-arduino-temperature-uart\ Release/activeLaunchTarget=null\:---

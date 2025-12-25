@@ -1,0 +1,10 @@
+08:55:57 **** Incremental Build of configuration Release for project 40-i2c-port-expander ****
+make -j20 all 
+arm-none-eabi-size  40-i2c-port-expander.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6904	     12	   1652	   8568	   2178	40-i2c-port-expander.elf
+Finished building: default.size.stdout
+ 
+
+08:55:57 Build Finished. 0 errors, 0 warnings. (took 197ms)
+

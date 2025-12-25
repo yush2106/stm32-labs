@@ -1,20 +1,10 @@
-14:21:50 **** Incremental Build of configuration Release for project 37-display-dma-temperature-by-uart ****
+18:57:18 **** Incremental Build of configuration Release for project 37-display-dma-temperature-by-uart ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "37-display-dma-temperature-by-uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\37-display-dma-temperature-by-uart\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="37-display-dma-temperature-by-uart.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 37-display-dma-temperature-by-uart.elf
- 
 arm-none-eabi-size  37-display-dma-temperature-by-uart.elf 
-arm-none-eabi-objdump -h -S 37-display-dma-temperature-by-uart.elf  > "37-display-dma-temperature-by-uart.list"
-arm-none-eabi-objcopy  -O binary 37-display-dma-temperature-by-uart.elf  "37-display-dma-temperature-by-uart.bin"
    text	   data	    bss	    dec	    hex	filename
   26692	    468	   2252	  29412	   72e4	37-display-dma-temperature-by-uart.elf
 Finished building: default.size.stdout
  
-Finished building: 37-display-dma-temperature-by-uart.bin
- 
-Finished building: 37-display-dma-temperature-by-uart.list
- 
 
-14:21:51 Build Finished. 0 errors, 0 warnings. (took 659ms)
+18:57:18 Build Finished. 0 errors, 0 warnings. (took 268ms)
 

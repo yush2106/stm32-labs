@@ -46,11 +46,7 @@ Channel: **Channel 1**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/37-display-dma-temperature-by-uart/img/37-display-dma-temperature-by-uart-06.jpg)
 
-Step 5: Set PA2 for UART TX and PA3 for UART RX.
-
-![image](https://github.com/yush2106/stm32-labs/blob/main/33-uart-transmit-text/img/33-uart-transmit-text-01.jpg)
-
-Step 6: UART settings.
+Step 5: UART settings.
 
 Mode: **Asynchronous**
 
@@ -64,7 +60,7 @@ Stop Bits: **1**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/33-uart-transmit-text/img/33-uart-transmit-text-02.jpg)
 
-Step 7: PuTTY settings.
+Step 6: PuTTY settings.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/33-uart-transmit-text/img/33-uart-transmit-text-03.jpg)
 

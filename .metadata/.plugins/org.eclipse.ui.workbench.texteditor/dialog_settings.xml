@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="SEND_"/>
+		<item value="HAL_UART_RxCpltCallback"/>
 		<item value="ADC_HandleTypeDef hadc1;"/>
 		<item value="timer_counter"/>
 		<item value="Delay"/>
@@ -16,7 +18,5 @@
 		<item value="sin"/>
 		<item value="HAL_ADC_ConvCpltCallback"/>
 		<item value="Cpltcallback"/>
-		<item value="callback"/>
-		<item value="CpltCallback"/>
 	</list>
 </section>
