@@ -3,6 +3,9 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="HA_SPI"/>
+		<item value="DevAddress"/>
+		<item value="I2C_TransferConfig"/>
 		<item value="SEND_"/>
 		<item value="HAL_UART_RxCpltCallback"/>
 		<item value="ADC_HandleTypeDef hadc1;"/>
@@ -15,8 +18,5 @@
 		<item value="HAL_DAC_ini"/>
 		<item value="HAL_DAC"/>
 		<item value="value_index"/>
-		<item value="sin"/>
-		<item value="HAL_ADC_ConvCpltCallback"/>
-		<item value="Cpltcallback"/>
 	</list>
 </section>

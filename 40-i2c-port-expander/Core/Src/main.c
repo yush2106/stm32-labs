@@ -105,9 +105,11 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_I2C_Init(&hi2c1);    //I2C initialize
+
   //IODIRA 0x00, set the port A input or output direction
-  //0xFE, FE is "1111 1110", 1 for input, 0 for output
-  //GPA1 to GPA7 art input, GPA0 is output
+  //0xFE, FE is "0b1111_1110", 1 for input, 0 for output
+  //GPA1 to GPA7 are input, GPA0 is output
   SendData(IODIRA, 0xFE);    //configure output
 
   /* USER CODE END 2 */

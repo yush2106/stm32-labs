@@ -60,7 +60,7 @@ Refer to the [24LC256 datasheet](https://www.microchip.com/en-us/product/24lc256
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/41-i2c-eeprom/img/41-i2c-eeprom-04.jpg)
 
-When control code is **1010**, A2 is **0**, A1 is **0**, A0 is **0**, and RW bit is **0** for write, Combine control code, A2, A1, A0 and RW bit, then the I2C address byte data is **0xA0**.
+When Control Code is **1010**, A2 is **0**, A1 is **0**, A0 is **0**, and RW bit is **0** for write, combine Control Code, A2, A1, A0 and RW bit, then the I2C address byte data is **0xA0**.
 
 <table style="text-align:center; border: 1px solid;">
   <thead style="border: 1px solid;">
@@ -69,9 +69,13 @@ When control code is **1010**, A2 is **0**, A1 is **0**, A0 is **0**, and RW bit
       <td style="border: 1px solid;" colspan=4>Control Code</td>
       <td style="border: 1px solid;" colspan=3>Chip Select Bits</td>
       <td style="border: 1px solid;">R/W</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;" colspan=2>Address High Byte</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;">Address Low Byte</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;">Data</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;">Stop</td>
     </tr>
   </thead>
@@ -86,10 +90,14 @@ When control code is **1010**, A2 is **0**, A1 is **0**, A0 is **0**, and RW bit
       <td style="border: 1px solid;">A1<br/>pin2</td>
       <td style="border: 1px solid;">A0<br/>pin1</td>
       <td style="border: 1px solid;">0 for Write</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">X for don't care bit</td>
       <td style="border: 1px solid;">7 bits for High Byte</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">8 bits for Low Byte</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">Data Bytes</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">P</td>
     </tr>
   </tbody>
@@ -108,13 +116,18 @@ Then, send the read command for reading data from the EEPROM.
       <td style="border: 1px solid;" colspan=4>Control Code</td>
       <td style="border: 1px solid;" colspan=3>Chip Select Bits</td>
       <td style="border: 1px solid;">R/W</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;" colspan=2>Address High Byte</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;">Address Low Byte</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;">Start</td>
       <td style="border: 1px solid;" colspan=4>Control Code</td>
       <td style="border: 1px solid;" colspan=3>Chip Select Bits</td>
       <td style="border: 1px solid;">R/W</td>
+      <td style="border: 1px solid;">ACK</td>
       <td style="border: 1px solid;">Data</td>
+      <td style="border: 1px solid;">NO ACK</td>
       <td style="border: 1px solid;">Stop</td>
     </tr>
   </thead>
@@ -129,9 +142,12 @@ Then, send the read command for reading data from the EEPROM.
       <td style="border: 1px solid;">A1<br/>pin2</td>
       <td style="border: 1px solid;">A0<br/>pin1</td>
       <td style="border: 1px solid;">0 for Write</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">X for don't care bit</td>
       <td style="border: 1px solid;">7 bits for High Byte</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">8 bits for Low Byte</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">S</td>
       <td style="border: 1px solid;">1</td>
       <td style="border: 1px solid;">0</td>
@@ -141,7 +157,9 @@ Then, send the read command for reading data from the EEPROM.
       <td style="border: 1px solid;">A1<br/>pin2</td>
       <td style="border: 1px solid;">A0<br/>pin1</td>
       <td style="border: 1px solid;">1 for Read</td>
+      <td style="border: 1px solid;">A</td>
       <td style="border: 1px solid;">Data Bytes</td>
+      <td style="border: 1px solid;">NA</td>
       <td style="border: 1px solid;">P</td>
     </tr>
   </tbody>
@@ -153,6 +171,6 @@ Step 7: Wiring Diagram
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/41-i2c-eeprom/img/41-i2c-eeprom-06.jpg)
 
-Generate a random number and write the number into the 24LC256 EEPROM by I<sup>2</sup>C connection, then read the number from EEPROM and display it on PuTTY terminal, flash the onboard LED for the number count times.
+Click the onboard button to generate a random number and write the number into the 24LC256 EEPROM by I<sup>2</sup>C connection, then read the number from EEPROM and display it on PuTTY terminal, flash the onboard LED for the number count times.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/41-i2c-eeprom/img/41-i2c-eeprom-06.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/41-i2c-eeprom/img/41-i2c-eeprom-07.jpg)

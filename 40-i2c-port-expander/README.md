@@ -99,6 +99,10 @@ I<sup>2</sup>C Device Address
 
 Register Address is listed in the [MCP23017 datasheet](https://www.microchip.com/en-us/product/mcp23017)
 
+It's 16-bit mode when IOCON.BANK value is **1**, another status, 8-bit mode when IOCON.BANK value is **0**.
+
+The IOCON.BANK value shuold be **0** for 8-bit mode on power-up.
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/40-i2c-port-expander/img/40-i2c-port-expander-04.jpg)
 
 Write command
@@ -158,12 +162,13 @@ Write command
       </td>
       <td></td>
       <td colspan=8 style="border: 1px solid;">
+        8-bit mode, IOCON.BANK = 0<br/>
         Write to IODIRA address 0x00</br>
         Write to GPIOA address 0x12
       </td>
       <td></td>
       <td colspan=8 style="border: 1px solid;">
-        Set IODIRA data 0xFE, "1111 1110",<br/>
+        Set IODIRA data 0xFE, "0b1111_1110",<br/>
         1 for input, 0 for output<br/>
         Set GPIOA data 0x01, then GPA0 is On,<br/>
         Set GPIOA data 0x00, then GPA0 is Off.

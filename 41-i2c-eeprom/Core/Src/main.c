@@ -145,6 +145,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_I2C_Init(&hi2c1);    //I2C initialize
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);    //reset pin
 
   /* USER CODE END 2 */

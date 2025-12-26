@@ -22,9 +22,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "string.h"
-#include "stdio.h"
-#include "stdlib.h"
+#include "string.h"    //for strlen()
+#include "stdio.h"    //for sprintf()
+#include "stdlib.h"    //for srand()
 #include "lcd.h"
 /* USER CODE END Includes */
 
@@ -94,7 +94,7 @@ void READ_EEPROM(uint16_t MemAddress, uint8_t *pData, uint16_t length) {
   address[0] = (uint8_t)((MemAddress & 0xFF00) >> 8);    //move data to right
   address[1] = (uint8_t)(MemAddress & 0x00FF);    //retrieve the right data
   HAL_I2C_Master_Transmit(&hi2c1, I2C_ADDRESS, address, 2, HAL_MAX_DELAY);    //transmit read command
-  HAL_I2C_Master_Receive(&hi2c1, I2C_ADDRESS, pData, length, HAL_MAX_DELAY);    //received data and storage data
+  HAL_I2C_Master_Receive(&hi2c1, (I2C_ADDRESS + 0x01), pData, length, HAL_MAX_DELAY);    //received data and storage data
 }
 
 //write EEPROM
