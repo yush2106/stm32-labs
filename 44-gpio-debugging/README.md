@@ -8,7 +8,7 @@ Set the onboard LED PA5 pin for debugging.
 
 Set PA13, PA14 for Serial Wire Debug (SWD) pins.
 
-Set PA5 for onboard LED GPIO pin.
+Set PA5 for onboard LED GPIO Output pin.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/44-gpio-debugging/img/44-gpio-debugging-01.jpg)
 
@@ -34,15 +34,15 @@ Debug Level: **Maximun (-g3)**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/43-simple-debug-settings/img/43-simple-debug-settings-05.jpg)
 
-Step 3: Set the break points
-
-![image](https://github.com/yush2106/stm32-labs/blob/main/44-gpio-debugging/img/44-gpio-debugging-02.jpg)
-
-Step 4: Debug Mode
+Step 3: Debug Mode
 
 Project -> Build Configurations -> Set Active -> Debug
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/43-simple-debug-settings/img/43-simple-debug-settings-07.jpg)
+
+Step 4: Set the break points
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/44-gpio-debugging/img/44-gpio-debugging-02.jpg)
 
 Step 5: Run debug
 

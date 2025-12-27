@@ -1,0 +1,10 @@
+21:32:35 **** Incremental Build of configuration Debug for project 45-display-characters-in-debugging ****
+make -j20 all 
+arm-none-eabi-size  45-display-characters-in-debugging.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5292	     12	   1572	   6876	   1adc	45-display-characters-in-debugging.elf
+Finished building: default.size.stdout
+ 
+
+21:32:36 Build Finished. 0 errors, 0 warnings. (took 193ms)
+
