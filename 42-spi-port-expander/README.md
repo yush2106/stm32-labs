@@ -38,7 +38,7 @@ NSSP Signal Type: **Software**
 
 Step 3: SPI write command
 
-Refer to the [MCP23S17 datasheet](https://www.microchip.com/en-us/product/mcp23017) for detailed specifications.
+Refer to the [MCP23S17 datasheet](https://www.microchip.com/en-us/product/mcp23s17) for detailed specifications.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/42-spi-port-expander/img/42-spi-port-expander-03.jpg)
 
@@ -105,7 +105,7 @@ SPI Device Address
   </tbody>
 </table>
 
-Register Address is listed in the [MCP23S17 datasheet](https://www.microchip.com/en-us/product/mcp23017)
+Register Address is listed in the [MCP23S17 datasheet](https://www.microchip.com/en-us/product/mcp23s17)
 
 It's 16-bit mode when IOCON.BANK value is **1**, another status, 8-bit mode when IOCON.BANK value is **0**.
 

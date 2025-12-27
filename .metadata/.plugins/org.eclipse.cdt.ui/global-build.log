@@ -1,17 +1,14 @@
-16:05:10 **** Incremental Build of configuration Release for project 42-spi-port-expander ****
+16:53:49 **** Incremental Build of configuration Debug for project 44-gpio-debugging ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "42-spi-port-expander.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\42-spi-port-expander\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="42-spi-port-expander.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 42-spi-port-expander.elf
- 
-arm-none-eabi-size  42-spi-port-expander.elf 
-arm-none-eabi-objdump -h -S 42-spi-port-expander.elf  > "42-spi-port-expander.list"
-arm-none-eabi-objcopy  -O binary 42-spi-port-expander.elf  "42-spi-port-expander.bin"
+arm-none-eabi-size  44-gpio-debugging.elf 
    text	   data	    bss	    dec	    hex	filename
-   5184	     12	   1668	   6864	   1ad0	42-spi-port-expander.elf
+   6096	     12	   1572	   7680	   1e00	44-gpio-debugging.elf
 Finished building: default.size.stdout
  
-Finished building: 42-spi-port-expander.bin
-Finished building: 42-spi-port-expander.list
- 
+16:53:53 **** Incremental Build of configuration Debug for project 44-gpio-debugging ****
+make -j20 all 
+arm-none-eabi-size  44-gpio-debugging.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6096	     12	   1572	   7680	   1e00	44-gpio-debugging.elf
+Finished building: default.size.stdout
  
