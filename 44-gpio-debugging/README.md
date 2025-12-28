@@ -56,7 +56,7 @@ Build Configuration: **Debug**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/43-simple-debug-settings/img/43-simple-debug-settings-10.jpg)
 
-Step 6: 
+Step 6: Check the current GPIO register value
 
 When the process stop at the break point, check the register value of the GPIO ODR port.
 

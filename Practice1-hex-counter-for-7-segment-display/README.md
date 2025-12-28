@@ -22,9 +22,11 @@ GPIO port B pins.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/Practice1-hex-counter-for-7-segment-display/img/Practice1-hex-counter-for-7-segment-display-01.jpg)
 
+![image](https://github.com/yush2106/stm32-labs/blob/main/Practice1-hex-counter-for-7-segment-display/img/Practice1-hex-counter-for-7-segment-display-02.jpg)
+
 7 segment display circuits.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/Practice1-hex-counter-for-7-segment-display/img/Practice1-hex-counter-for-7-segment-display-02.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/Practice1-hex-counter-for-7-segment-display/img/Practice1-hex-counter-for-7-segment-display-03.jpg)
 
 | NUCLEO-L476RG | 7 segment display LEDs | 7 segment display pins |
 | --- | --- | --- |
@@ -149,4 +151,4 @@ Write hexadecimal data into register.
   </tbody>
 </table>
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/Practice1-hex-counter-for-7-segment-display/img/Practice1-hex-counter-for-7-segment-display-03.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/Practice1-hex-counter-for-7-segment-display/img/Practice1-hex-counter-for-7-segment-display-04.jpg)

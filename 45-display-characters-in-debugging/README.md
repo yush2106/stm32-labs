@@ -46,8 +46,7 @@ Serial Wire Viewer (SWV): **Enable**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/45-display-characters-in-debugging/img/45-display-characters-in-debugging-03.jpg)
 
-
-Step 5: Set the break points
+Step 5: Set the break point
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/45-display-characters-in-debugging/img/45-display-characters-in-debugging-04.jpg)
 

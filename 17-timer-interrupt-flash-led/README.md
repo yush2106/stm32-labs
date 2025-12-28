@@ -60,4 +60,6 @@ Step 4: Define the timer interrupt callback function to toggle onblard LED.
 
 Step 5: Start timer 2 in the main function.
 
-![image](https://github.com/yush2106/stm32-labs/blob/main/01-flash-led/img/01-flash-led.jpg)
+![image](https://github.com/yush2106/stm32-labs/blob/main/01-flash-led/img/01-flash-led-01.jpg)
+
+![image](https://github.com/yush2106/stm32-labs/blob/main/01-flash-led/img/01-flash-led-02.jpg)
