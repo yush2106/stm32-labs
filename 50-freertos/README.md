@@ -1,6 +1,6 @@
 ## FreeRTOS
 
-This project, build 3 task to turn on or turn off the LEDs. Ecah task has its timing process to control the LEDs.
+This project, use FreeRTOS structure to build 3 tasks to turn on or turn off the LEDs. Ecah task has its timing process to control the LEDs.
 
 ## Process Step
 
@@ -20,6 +20,6 @@ Step 3: Circuits diagram
 
 Step 4: Execute tasks at the same time
 
-Each task has its timing process to drive the LEDs to turn on or turn off.
+Each thread task has its own timing process to drive the LEDs to turn on or turn off.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/50-freertos/img/50-freertos-04.jpg)
