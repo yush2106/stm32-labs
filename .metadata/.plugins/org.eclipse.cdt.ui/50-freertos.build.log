@@ -1,0 +1,20 @@
+10:36:51 **** Incremental Build of configuration Release for project 50-freertos ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "50-freertos.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\Lab\50-freertos\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="50-freertos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 50-freertos.elf
+ 
+arm-none-eabi-size  50-freertos.elf 
+arm-none-eabi-objdump -h -S 50-freertos.elf  > "50-freertos.list"
+arm-none-eabi-objcopy  -O binary 50-freertos.elf  "50-freertos.bin"
+   text	   data	    bss	    dec	    hex	filename
+  10852	     16	   7984	  18852	   49a4	50-freertos.elf
+Finished building: default.size.stdout
+ 
+Finished building: 50-freertos.bin
+Finished building: 50-freertos.list
+ 
+ 
+
+10:36:52 Build Finished. 0 errors, 0 warnings. (took 596ms)
+

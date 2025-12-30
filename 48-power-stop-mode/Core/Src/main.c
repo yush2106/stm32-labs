@@ -95,16 +95,16 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   HAL_PWR_EnableSleepOnExit();    //enable sleep on exit
-  //enter stop mode, the CPU clock is OFF, and the system clock is off, too
-  //PWR_SLEEPENTRY_WFI (wait for interrupt)
-  HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+  //enter stop mode, the CPU clock is OFF and the system clock is off, too
+  //PWR_STOPENTRY_WFI (wait for interrupt)
+  HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    //The loop process will not be executed when enter sleep mode.
+    //The loop process will not be executed when enter stop mode.
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
     HAL_Delay(500);
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);

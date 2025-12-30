@@ -28,10 +28,10 @@ Step 4: Start Stop Mode
 
 Start **HAL_PWR_EnableSleepOnExit()** function and **HAL_PWR_EnterSTOPMode()** function.
 
-Set the **PWR_SLEEPENTRY_WFI** parameter to wait for interrupt.
+Set the **PWR_STOPENTRY_WFI** parameter to wait for interrupt.
 
 Step 5: Wake up from stop mode
 
-When the onboard button is clicked, the onboard LED will be turn on or turn off.
+When the onboard button is clicked, the onboard LED will be turned on or turned off.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/06-push-button-led/img/06-push-button-led-01.jpg)

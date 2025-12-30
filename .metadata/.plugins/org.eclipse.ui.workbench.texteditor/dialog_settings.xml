@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="StartDefaultTask"/>
 		<item value="HAL_I2C_Init(&amp;hi2c1)"/>
 		<item value="HAL_I2C_Init"/>
 		<item value="HA_SPI"/>
@@ -17,6 +18,5 @@
 		<item value="LCDTask_attributes"/>
 		<item value="defaultTaskHandle"/>
 		<item value="DACData"/>
-		<item value="HAL_DAC_ini"/>
 	</list>
 </section>
