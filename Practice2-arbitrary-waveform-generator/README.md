@@ -18,11 +18,25 @@ PC13 for onboard button, PA4 for DAC pin, PC4 to PC9 for LCD, and PB0 to PB4 for
 
 Step 2: Onboard button settings
 
+GPIO mode: **External Interrupt Mode with Falling edge trigger detection**
+
+EXTI line[15:10] interrupts: **Enabled**
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/Practice2-arbitrary-waveform-generator/img/Practice2-arbitrary-waveform-generator-02.jpg)
 
 Step 3: DAC settings
 
+OUT1 connected to: **only to external pin**
+
+Output Buffer: **Enable**
+
+Trigger: **Timer 2 Trigger Out event**
+
 ![image](https://github.com/yush2106/stm32-labs/blob/main/Practice2-arbitrary-waveform-generator/img/Practice2-arbitrary-waveform-generator-03.jpg)
+
+DMA Request Settings
+
+Mode: **Circular**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/Practice2-arbitrary-waveform-generator/img/Practice2-arbitrary-waveform-generator-04.jpg)
 
@@ -34,7 +48,9 @@ Counter Period (AutoReload Register - 32 bits value): **19**
 
 $$I = \frac{(P+1)(A+1)}{f}$$
 
-When P is 399, A is 19, f is 80(Mhz), then I (interval time) is 100us.
+When __*P*__ is 399, __*A*__ is 19, __*f*__ is 80(Mhz), then __*I*__ (interval time) is 100us.
+
+auto-reload preload: **Enable**
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/Practice2-arbitrary-waveform-generator/img/Practice2-arbitrary-waveform-generator-05.jpg)
 
@@ -54,6 +70,6 @@ Program flowchart
 
 Click the onboard button, switch the wave type.
 
-DAC outputed wavefrom signal on ZaidaScope, then display text on LCD and switch LEDs.
+Use DAC to output wavefrom signal to ZaidaScope, then display text on LCD and switch LEDs.
 
 ![image](https://github.com/yush2106/stm32-labs/blob/main/Practice2-arbitrary-waveform-generator/img/Practice2-arbitrary-waveform-generator-10.jpg)
